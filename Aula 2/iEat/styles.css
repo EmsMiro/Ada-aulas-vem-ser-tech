@@ -31,6 +31,8 @@ body, div, p {
   text-align: center;
   display: inline-block;
   transition: transform 0.2s;
+  text-decoration:none;
+  color: #000;
 }
 
 .servico:hover {
