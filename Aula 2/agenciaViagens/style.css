@@ -38,6 +38,11 @@ header {
     cursor: pointer;        
 }
 
+.header-section h2{
+  text-align: center;
+  margin-top: 30px;
+}
+
 .travel-package {
     display: flex;
     justify-content: space-between;
@@ -47,30 +52,43 @@ header {
   
   .package {
     flex: 1;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;    
+    background-color: #fff;    
     text-align: center;
     transition: transform 0.2s;
     cursor: pointer;
     margin-left: 5px;
+    position: relative;
   }
   
   .package:hover {
     transform: translateY(-5px);
+  }
+
+  .second-package {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -200%);
   }
   
   h2 {
     margin: 10px 0;
     text-align: center;
     font-family: 'Raleway', sans-serif;
-    margin-top: 40px
+    margin-top: 40px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    color: #fff;
+    font-size: 32px;
+    text-shadow: 2px 2px 5px #000;
   }
   
   details {
     margin-top: 20px;
+    text-align: center;
   }
   
   summary {
