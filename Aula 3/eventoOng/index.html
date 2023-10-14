@@ -1,63 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Formulário Ajude a Causa</title>
-</head>
-<body>
-    <form action="" method="post" id="meuFormulario">
-        <div>
-            <label>
-                Nome:
-                <input type="text" name="name" placeholder="Digite seu nome" required>
-            </label>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-image">
+        <div class="div-title">
+          <h1>Ajude a causa</h1>
+          <p>RUN</p>
         </div>
+        <img src="./img/img-header.png" alt="desenho de uma atleta" />
+      </div>
 
-        <div>
+      <div class="form">
+        <form method="post" id="meuFormulario">
+          <div>
+            <p>Nome:</p>
             <label>
-                Idade:
-                <input type="text" name="idade" oninput="this.value = this.value = this.value.replace(/[^0-9]/g, ''); if (this.value.length > 2) this.value = this.value.substring(0, 2);" placeholder="Digite sua idade" required>
+              <input
+                type="text"
+                name="name"
+                id="input-name"
+                placeholder="Digite seu nome"
+                required
+                title="O campo nome não pode estar vazio"
+              />
             </label>
-        </div>
+          </div>
 
-        <div>
+          <div>
+            <p>Idade:</p>
             <label>
-                Email:
-                <input type="email" name="email" placeholder="Digite seu melhor email" required>
+              <input
+                type="text"
+                name="idade"                
+                oninput="this.value = this.value = this.value.replace(/[^0-9]/g, ''); if (this.value.length > 2) this.value = this.value.substring(0, 2);"
+                placeholder="Digite sua idade"
+                required
+                title="O campo idade não pode estar vazio"
+              />
             </label>
-        </div>
-        <div>
-            <label>
-                Tamanho camiseta:
-                <input type="radio" name="radio">PP
-                <input type="radio" name="radio">P
-                <input type="radio" name="radio">M
-                <input type="radio" name="radio">G
-                <input type="radio" name="radio">GG
-                <input type="radio" name="radio">XG
-            </label>
-        </div>
+          </div>
 
-        <div>
-            <label>              
-                <select name="select">Categoria de inscrição
-                    <option value="valor1">Corrida 3km [3RUN]</option>
-                    <option value="valor2">Corrida 5km [5RUN]</option>
-                    <option value="valor3">Caminhada 4km[4WALK]</option>
-                </select>
-            </label>
-        </div>
-        <div>
+          <div>
+            <p>Email:</p>
             <label>
-                Valor da doação:
-                <input type="text" name="doacao" oninput="this.value = this.value = this.value.replace(/[^0-9.]/g, '');" title="Insira um valor válido (ex.: 10.50)" placeholder="0.00" required>
+              <input
+                type="email"
+                name="email"
+                id="input-email"
+                placeholder="Digite seu melhor email"
+                required
+                title="O campo email não pode estar vazio"
+              />
             </label>
-        </div>
-        <button type="submit">Enviar</button>
-    </form>  
+          </div>
+
+          <div class="radio-container">
+            <p>Tamanho camiseta:</p>
+            <label> <input type="radio" name="radio" value="PP" required title="Selecione uma opção de camiseta" />PP </label>
+            <label> <input type="radio" name="radio" value="P" />P </label>
+            <label> <input type="radio" name="radio" value="M" />M </label>
+            <label> <input type="radio" name="radio" value="G" />G </label>
+            <label> <input type="radio" name="radio" value="GG" />GG </label>
+            <label> <input type="radio" name="radio" value="XG" />XG </label>
+          </div>
+
+          <div>
+            <p>Categoria de inscrição</p>
+            <label>
+              <select name="select" required title="Selecione uma categoria de inscrição">
+                <option value="" disabled>Selecione uma categoria</option>
+                <option value="Corrida 3km">Corrida 3km [3RUN]</option>
+                <option value="Corrida 5km">Corrida 5km [5RUN]</option>
+                <option value="Caminhada 4km">Caminhada 4km[4WALK]</option>
+              </select>
+            </label>
+          </div>
+
+          <div>
+            <p>Valor da doação:</p>
+            <label>
+              <input
+                type="text"
+                name="doacao"
+                id="input-doacao"
+                oninput="this.value = this.value = this.value.replace(/[^0-9.]/g, '');"
+                title="Insira um valor válido (ex.: 10.50)"
+                placeholder="0.00"
+                required
+              />
+            </label>
+          </div>
+
+          <button type="submit" value="enviar" class="button-submit">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+
     <div id="resultado"></div>
-    <button id="back">Voltar</button>   
-    <script src="./main.js"></script>  
-</body>
+    <!-- <button id="back">Voltar</button>    -->
+    <script src="./main.js"></script>
+  </body>
 </html>
