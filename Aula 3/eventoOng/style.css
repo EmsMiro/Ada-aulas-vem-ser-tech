@@ -44,10 +44,11 @@ body {
 .div-title {
     font-family:'Barlow Condensed', sans-serif;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 18px;
     text-transform: uppercase;
-    text-align: left;
-    margin-left: 50px;      
+    text-align: center;
+    width: calc(100% - 160px);     
+    margin: 0 auto; 
 }
 
 .div-title h1 {
@@ -57,16 +58,15 @@ body {
    background-color: #69BBBC;
    border-radius: 15px;
    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-   padding: 15px;
-   margin-right: 2rem;
+   padding: 15px;   
    width: fit-content;
 }
 
 .div-title p {
-    font-size: 52px;
+    font-size: 18px;
     background-color: #fff;
     border-radius: 5px;
-    width: 150px;
+    width: fit-content;
     padding: 10px;
     margin-top: 10px;
     text-align: center;
@@ -74,12 +74,13 @@ body {
 }
 
 .div-img {
-position: absolute;
+  position: absolute;
   bottom: 0; 
   left: 0;
   right: 0;
-  text-align: right;
+  text-align: center;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
 /*Estilos da div direita*/
@@ -186,7 +187,7 @@ select {
     .form-image, .div-title {
         display: none;
     }
-        
+
     .container {
         width: 100%;
         flex-direction: column;
