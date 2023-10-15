@@ -56,7 +56,13 @@ inputName.addEventListener('keypress', (e) => {
     const regex = /[A-Za-zÁáÉéÍíÓóÚúÃãẼẽĨĩÕõŨũÑñÜüÇç~]/;
     //47 ao 58 são números
     //para provar que o que está sendo pressionado são números basta descomentar a linha abaixo
-    // console.log(keyCode)    
+    // console.log(keyCode) 
+    
+    // Permite espaço em branco
+    if (keyCode === 32) {
+        return;
+    }
+    
     if (keyCode >= 47 && keyCode <= 58) {
         e.preventDefault();
     } else if (!regex.test(String.fromCharCode(keyCode))) {
@@ -64,15 +70,18 @@ inputName.addEventListener('keypress', (e) => {
     }
 });
 
-// inputEmail.addEventListener('blur', function () {
-//     const email = emailInput.value;
-//     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+inputEmail.addEventListener('input', function () {
+    const email = inputEmail.value;
+    const emailRegex = /^[a-zA-Z0-9._-]{5,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-//     if (!emailRegex.test(email)) {
-//         alert('Por favor, insira um endereço de e-mail válido.');
-//         emailInput.value = ''; // Limpa o campo se o e-mail for inválido
-//     }
-// } );
+    if (!emailRegex.test(email) || email.indexOf('@') === 0) {
+        // mensagem de erro para feedback em tempo real
+        inputEmail.setCustomValidity('Insira um email válido (ex.: exemplo@email.com)');
+    } else {
+        // Limpa a mensagem de erro em caso de email válido
+        inputEmail.setCustomValidity('');
+    }
+} );
 
 
 inputDoacao.addEventListener('input', function() {
@@ -80,17 +89,18 @@ inputDoacao.addEventListener('input', function() {
     const valorDigitado = inputDoacao.value;
 
     if (valorDigitado <= 0 || valorDigitado === 0) {
-        // Define uma mensagem de erro
+        // mensagem de error
         inputDoacao.setCustomValidity('Insira um valor válido (maior que zero).');
     } else {
-        // Limpa a mensagem de erro
+        // Limpa a mensagem de error
         inputDoacao.setCustomValidity('');
     }
 
     // const valorNaoFormatado = valorDigitado;
-    // const valorFormatado = (new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(valorNaoFormatado));
-    // console.log(valorFormatado)
+    // console.log(valorNaoFormatado, typeof valorNaoFormatado)
 
+    // const valorFormatado = (new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(valorNaoFormatado));
+    // console.log(valorFormatado, typeof valorFormatado)    
 })
 
 

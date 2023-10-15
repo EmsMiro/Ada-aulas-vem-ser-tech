@@ -10,13 +10,15 @@
     <div class="container">
       <div class="form-image">
         <div class="div-title">
-          <h1>Ajude a causa</h1>
+          <h1>Ajude a causa</h1>          
           <p>RUN</p>
         </div>
-        <img src="./img/img-header.png" alt="desenho de uma atleta" />
+        <div class="div-img">
+          <img src="./img/img-header.png" alt="desenho de uma atleta" />
+        </div>        
       </div>
-
-      <div class="form">
+      
+      <div class="form">        
         <form method="post" id="meuFormulario">
           <div>
             <p>Nome:</p>
@@ -26,6 +28,8 @@
                 name="name"
                 id="input-name"
                 placeholder="Digite seu nome"
+                minlength="5"
+                maxlength="20"
                 required
                 title="O campo nome não pode estar vazio"
               />
@@ -53,7 +57,7 @@
                 type="email"
                 name="email"
                 id="input-email"
-                placeholder="Digite seu melhor email"
+                placeholder="ex: nome@email.com"
                 required
                 title="O campo email não pode estar vazio"
               />

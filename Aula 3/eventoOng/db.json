@@ -332,6 +332,15 @@
       "categoriaInscricao": "Corrida 3km",
       "valorDoacao": "12",
       "id": 37
+    },
+    {
+      "nome": "juvenal",
+      "idade": "46",
+      "email": "juvenal@email.com",
+      "tamanhoCamiseta": "G",
+      "categoriaInscricao": "Corrida 5km",
+      "valorDoacao": "30.00",
+      "id": 38
     }
   ]
 }
