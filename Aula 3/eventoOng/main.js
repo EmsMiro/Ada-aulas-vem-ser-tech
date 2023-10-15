@@ -35,15 +35,44 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.json(); // Converte a resposta para JSON
         })
         .then(data => {
-            // Agora você pode acessar os dados corretamente
+            // Mostrar os dados do form na div resultado
             const mensagem = `Inscrição confirmada! Atleta ${data.nome}, ${data.idade} anos, email: ${data.email}, tamanho camiseta: ${data.tamanhoCamiseta}, Categoria: ${data.categoriaInscricao}, Doou o valor de ${data.valorDoacao}`;
-            resultadoDiv.textContent = mensagem;
+            // resultadoDiv.textContent = mensagem;
+            resultadoDiv.querySelector('#dados-formulario').textContent = mensagem;
+
+            //pegando o elemento da div container
+            const containerDiv = document.querySelector('#container')
+
+            // ocultando a div container
+            containerDiv.style.display = 'none';
+
+            //exibir a div resultado
+            resultadoDiv.style.display = 'block';
+
+            // Adicione a classe 'show-result' à div resultado
+            // resultadoDiv.classList.add('show-result');
+
+            //exibir o botão voltar
+            const btnVoltar = document.querySelector('#btnVoltar');
+            btnVoltar.addEventListener('click', function() {
+                //reseta o form
+                formulario.reset();
+
+                //oculta a div resultado
+                resultadoDiv.style.display = 'none';
+
+                // Exibir de volta a div container
+                containerDiv.style.display = 'flex';
+
+                // Ocultar o botão "Voltar" novamente
+                btnVoltar.style.display = 'none';
+            });
         })
         .catch(error => {
             console.error('Erro ao enviar os dados para o servidor JSON:', error);
         });        
-    })
-})
+    });
+});
 
 //Constantes para lidar com as validações
 const inputName = document.querySelector('#input-name');
@@ -72,7 +101,7 @@ inputName.addEventListener('keypress', (e) => {
 
 inputEmail.addEventListener('input', function () {
     const email = inputEmail.value;
-    const emailRegex = /^[a-zA-Z0-9._-]{5,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
     if (!emailRegex.test(email) || email.indexOf('@') === 0) {
         // mensagem de erro para feedback em tempo real

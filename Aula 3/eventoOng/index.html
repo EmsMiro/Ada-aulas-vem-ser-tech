@@ -7,7 +7,7 @@
     <title>Formulário Ajude a Causa</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <div class="form-image">
         <div class="div-title">
           <h1> Formulário de inscrições </h1>          
@@ -108,8 +108,12 @@
       </div>
     </div>
 
-    <div id="resultado"></div>
-    <!-- <button id="back">Voltar</button>    -->
+    <div id="resultado" style="display: none;">
+      <h2>Inscrição efetuada!</h2>
+      <div id="dados-formulario"></div>
+      <button id="btnVoltar">Voltar</button>   
+    </div>
+    
     <script src="./main.js"></script>
   </body>
 </html>
