@@ -162,7 +162,8 @@ select {
     background-color: #fff;    
     padding: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
-    border-radius:10px;    
+    border-radius:10px;  
+    text-align: center;  
 }
 
 #resultado h2 {

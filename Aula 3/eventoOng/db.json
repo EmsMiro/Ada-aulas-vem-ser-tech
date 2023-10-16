@@ -8,6 +8,15 @@
       "categoriaInscricao": "valor3",
       "valorDoacao": "10.00",
       "id": 1
-    }    
+    },
+    {
+      "nome": "joãozinho",
+      "idade": "25",
+      "email": "joaozin@email.com",
+      "tamanhoCamiseta": "P",
+      "categoriaInscricao": "Corrida 3km",
+      "valorDoacao": "50.00",
+      "id": 2
+    }
   ]
 }

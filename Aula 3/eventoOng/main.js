@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             // Mostrar os dados do form na div resultado
-            const mensagem = `Inscrição confirmada! Atleta ${data.nome}, ${data.idade} anos, email: ${data.email}, tamanho camiseta: ${data.tamanhoCamiseta}, Categoria: ${data.categoriaInscricao}, Doou o valor de ${data.valorDoacao}`;
+            const mensagem = `Confira seus dados: Atleta ${data.nome}, ${data.idade} anos, email: ${data.email}, tamanho camiseta: ${data.tamanhoCamiseta}, Categoria: ${data.categoriaInscricao}, Doou o valor de ${data.valorDoacao}`;
             // resultadoDiv.textContent = mensagem;
             resultadoDiv.querySelector('#dados-formulario').textContent = mensagem;
 
