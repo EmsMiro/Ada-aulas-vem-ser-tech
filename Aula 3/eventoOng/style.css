@@ -118,7 +118,7 @@ body {
 .button-submit {    
     background-color: #69BBBC;
     color: #fff;
-    display: inline-block; /* Substituí "block" por "inline-block" se adequado ao contexto */
+    display: block; 
     margin: 1.5rem auto 1rem;
     text-decoration: none;
     padding: 0.5rem;
