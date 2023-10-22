@@ -17,6 +17,24 @@
       "categoriaInscricao": "Corrida 3km",
       "valorDoacao": "50.00",
       "id": 2
+    },
+    {
+      "nome": "josefina",
+      "idade": "27",
+      "email": "josefina@email.com",
+      "tamanhoCamiseta": "P",
+      "categoriaInscricao": "Corrida 5km",
+      "valorDoacao": "150.00",
+      "id": 3
+    },
+    {
+      "nome": "maria",
+      "idade": "40",
+      "email": "mariahc@email.com",
+      "tamanhoCamiseta": "GG",
+      "categoriaInscricao": "Corrida 5km",
+      "valorDoacao": "200",
+      "id": 4
     }
   ]
 }
