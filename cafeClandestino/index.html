@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clandestino Café</title>    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="/assets/img/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header class="header-global">
+        <img src="assets/img/logo-header.jpg" alt="logotipo" class="logo-header">
+
+        <nav class="nav-header">
+            <ul>
+                <li><a href="#section-sobre">Sobre</a></li>
+                <li><a href="#section-produtos">Produtos</a></li>
+                <li><a href="#section-eventos">Eventos</a></li>
+                <li><a href="#section-contato">Contato</a></li>
+            </ul>
+        </nav>
+        <img src="assets/img/playmobil-header.png" alt="playmobil" class="playmobil-img">
+    </header>
+    <main class="principal">
+        <section class="sobre" id="section-sobre">
+           <header class="sobre-header">
+            <h2>Clandestino</h2>
+            <p>Café</p>
+           </header>
+
+           <figure class="sobre-section-img">
+            <img src="/assets/img/section1-bus.png" alt="ônibus verde">
+            <figcaption>"O famoso ônibus verde"</figcaption>
+           </figure>
+
+           <div class="sobre-txt" id="sobre">
+               <h3 class="sobre-h3">Sobre</h3>
+               <p class="sobre-paragraph">
+                Somos o Clandestino Café, um ônibus Mercedes monobloco 1982, 
+                “aposentado” pelo exército brasileiro, transformado em uma cafeteria itinerante. 
+                Nosso proposta é difundir a cultura e consumo de cafés especiais por onde passamos. 
+                <br> Além disso, agregar arte, poesia, música e otras cositas más, num ambiente aconchegante, 
+                climatizado e com uma vista incrível para um horizonte novo em cada uma das nossas paradas.
+                <br> Pra saber qual a nossa próxima parada, sobe aí! <br> - Mateus Alves (Proprietário do Clandestino)
+            </p>
+            </div>             
+        </section>
+        
+        <section class="produtos" id="section-produtos">
+
+            <header class="produtos-section">
+                <figure>
+                    <img src="/assets/img/logo-playmobil.png" alt="" class="logo-produtos">
+                    <h3 class="produto-h3">Produtos</h3>
+                </figure>
+            </header>            
+
+           <div class="produtos-container">
+            <article>
+                <figure class="figure-produto">
+                    <img src="/assets/img/cafesespeciais.jpg" alt="cafe expresso" class="img-produto">
+                    <figcaption class="figcaption-produtos">Espresso - R$ 8.00</figcaption>
+                </figure>
+                
+            </article>
+            <article>
+                <figure class="figure-produto">
+                    <img src="/assets/img/salgados.jpg" alt="salgado" class="img-produto">
+                    <figcaption class="figcaption-produtos">Salgados - R$ 8.00</figcaption>
+                </figure>
+            </article>
+            <article>
+                <figure class="figure-produto">
+                    <img src="/assets/img/doces.jpg" alt="doces" class="img-produto">
+                    <figure>Doces - R$ 14.00</figure>
+                </figure>
+            </article>
+            <article>
+                <figure class="figure-produto">
+                    <img src="/assets/img/celestino.jpg" alt="cafe cold brew" class="img-produto">
+                    <figcaption class="figcaption-produtos">Celestino - R$ 17.00</figcaption>
+                </figure>
+            </article>
+            <article>
+                <figure class="figure-produto">
+                    <img src="/assets/img/box.jpg" alt="box com itens" class="img-produto">
+                    <figcaption class="figcaption-produtos">Box - R$ 45.00</figcaption>
+                </figure>
+            </article>
+            <article>
+                <figure class="figure-produto">
+                    <img src="/assets/img/outrosprodutos.jpg" alt="jarra de grãos de café" class="img-produto">
+                    <figcaption class="figcaption-produtos">Café em grãos - R$ 30.00</figcaption>
+            </article>
+           </div>
+        
+            <aside>
+                <h4>Tipos de café</h4>
+                <ul>
+                    <li>
+                        <details>
+                            <summary>Espresso</summary>
+                            <p>Um café espresso é uma pequena quantidade de café concentrado e rico, preparado rapidamente sob pressão.</p>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>Mocha</summary>
+                            <p>Um café mocha é uma bebida que combina café espresso, chocolate e leite.</p>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>Celestino</summary>
+                            <p> Feito com café (espresso ou cold brew) limão siciliano, mel de gengibre, gelo e água com gás.
+                            </p>
+                        </details>
+                    </li>
+                    <li>
+                        <details>
+                            <summary>Cold brew</summary>
+                            <p>É uma bebida gelada preparada com café moído em água fria, resultando em um café suave e menos ácido.
+                            </p>
+                        </details>
+                    </li>
+                </ul>
+            </aside> 
+        </section>
+        
+        <section class="eventos-section" id="section-eventos">
+            <div class="container-eventos">
+              <img src="/assets/img/eventos.jpg" class="eventos-image">
+              <div class="eventos-content">
+                <h3 class="eventos-title">Eventos</h3>
+                <p class="eventos-description">Fique por dentro de todas as novidades da nossa cafeteria!</p>
+                <p class="eventos-description">Inscreva-se agora para receber informações exclusivas sobre os próximos eventos e promoções.</p>
+                <h3 class="eventos-h3">Inscreva-se</h3>
+
+                <form class="inscricao-form">
+                  <label for="nome">Nome:</label>
+                  <input type="text" id="nome" name="nome" placeholder="Nome completo">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" placeholder="Seu melhor e-mail">
+                  <button type="submit" class="inscrever-button">Enviar</button>
+                </form>
+                <div class="table-container">
+                    <table class="horario-atendimento">
+                        <tr>
+                            <th colspan="2">Horário de atendimento</th>
+                        </tr>
+                        <tr>
+                            <td>Segunda à Sexta</td>
+                            <td>9:00 às 20:30</td>
+                        </tr>
+                        <tr>
+                            <td>Sábado e domingo</td>
+                            <td>10:00 às 21:00</td>
+                        </tr>
+                    </table>
+                </div>
+              </div>              
+            </div>            
+          </section>
+
+          <section class="contato-section" id="section-contato">
+            <header>
+                <h3 class="contato-h3">Contato</h3>
+            </header>
+            <ul class="contato-items">
+                <li>                  
+                  <p>
+                    <i class="fab fa-instagram"></i>
+                    <a href="#">@instagram.com/clandestinocafe</a></p>
+                </li>
+                <li>                  
+                  <p>
+                    <i class="fab fa-facebook"></i>
+                    <a href="#">@facebook.com/clandestino364</a></p>
+                </li>
+                <li>                    
+                    <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    <a href="#">@clandestinocafe364@gmail.com </a></p>
+                </li>
+                <li>                    
+                    <p>
+                    <i class="fab fa-whatsapp"></i>
+                     <a href="#">+55 87 98806-0615</a></p>
+                </li>               
+              </ul>
+          </section>
+        
+    </main>
+    <footer class="footer">
+        <img src="/assets/img/logo-alternative-removebg-preview.png" alt="logo">
+        <nav class="nav-footer">
+            <ul>
+                <li><a href="#section-sobre">Sobre</a></li>
+                <li><a href="#section-produtos">Produtos</a></li>
+                <li><a href="#section-eventos">Eventos</a></li>
+                <li><a href="#section-contato">Contato</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
