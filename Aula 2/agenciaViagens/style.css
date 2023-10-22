@@ -38,9 +38,14 @@ header {
     cursor: pointer;        
 }
 
-.header-section h2{
+/* .header-section h2{
   text-align: center;
   margin-top: 30px;
+  display: block;
+} */
+
+section .header-section {
+  display: block;
 }
 
 .travel-package {
