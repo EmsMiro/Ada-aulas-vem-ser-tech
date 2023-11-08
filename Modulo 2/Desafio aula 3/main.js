@@ -11,10 +11,10 @@ const arrGeral = [
   ["Carlos Oliveira", 84297701780],
 ];
 
-const parceirosAgrupados = {
-  PF: [],
-  PJ: [],
-};
+    const parceirosAgrupados = {
+    PF: [],
+    PJ: [],
+    };
 
 for (let i = 0; i < arrGeral.length; i++) {
   for (let j = 0; j < arrGeral[i].length; j++) {
@@ -31,3 +31,19 @@ for (let i = 0; i < arrGeral.length; i++) {
 }
 
 console.log(parceirosAgrupados);
+
+function preencherDetalhe(tipo, dados) {
+    const detalhe = document.getElementById("conteudo" + tipo);
+    
+  
+  dados.forEach((dado) => {
+      const paragrafo = document.createElement("p");
+      const documento = tipo === "PJ" ? "CNPJ" : "CPF";
+      paragrafo.textContent = `Nome: ${dado.nome}, ${documento}: ${dado.parceiroId}`;
+      detalhe.appendChild(paragrafo);
+    });
+  }
+  
+  
+  preencherDetalhe("PJ", parceirosAgrupados.PJ);
+  preencherDetalhe("PF", parceirosAgrupados.PF);
