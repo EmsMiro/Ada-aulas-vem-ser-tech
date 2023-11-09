@@ -1,0 +1,110 @@
+@import url('normalize.css');
+
+body {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+header {
+    background-image: url('./img/praia4.jpg');
+    background-size:cover;
+    height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	text-align: center;
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 24px;    
+}
+
+.header-p {
+    font-family: 'Raleway', sans-serif;
+    margin:0 0 80px;
+}
+
+.header-button{
+    all: unset;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    border: 5px solid #fff;
+    border-radius:20px;
+    background-color: #fff;  
+    color: #000;
+    padding: 10px; 
+    width: 150px; 
+    cursor: pointer;        
+}
+
+/* .header-section h2{
+  text-align: center;
+  margin-top: 30px;
+  display: block;
+} */
+
+section .header-section {
+  display: block;
+}
+
+.travel-package {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .package {
+    flex: 1;
+    padding: 20px;    
+    background-color: #fff;    
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: pointer;
+    margin-left: 5px;
+    position: relative;
+  }
+  
+  .package:hover {
+    transform: translateY(-5px);
+  }
+
+  .second-package {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -200%);
+  }
+  
+  h2 {
+    margin: 10px 0;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 40px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    color: #fff;
+    font-size: 32px;
+    text-shadow: 2px 2px 5px #000;
+  }
+  
+  details {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  summary {
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .section-img {
+    width: 400px;
+    height: 400px;
+  }
+

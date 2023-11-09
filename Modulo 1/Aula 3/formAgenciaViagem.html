@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência TravelMundo</title>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <form action="envioRespostasForm.html" method="get">
+        <div>
+            <label for="text">Nome:</label>
+            <input type="text" name="text" id="text">
+        </div>
+
+        <div>
+            <label for="date">Data da viagem:</label>
+            <input type="date" name="date" id="date">
+        </div>
+
+        <div>
+            <label for="number">Número de passageiros:</label>
+            <input type="number" name="number" id="number">
+        </div>
+
+       <div>
+        <label for="pais">País de origem:</label>
+        <select name="pais" id="pais">
+            <option value="Brasil">Brasil</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+            <option value="Canadá">Canadá</option>
+            <option value="Reino Unido">Reino Unido</option>
+            <option value="França">França</option>
+            <option value="Alemanha">Alemanha</option>
+            <option value="Japão">Japão</option>
+            <option value="Austrália">Austrália</option>
+            <option value="China">China</option>
+            <option value="Índia">Índia</option>
+        </select>
+    </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+        </div>
+
+        <div>
+            <label for="checkbox">Tipo de refeição:</label>
+            <input type="checkbox" name="refeicao" value="padrao"> Padrão 
+            <input type="checkbox" name="refeicao" value="vegana"> Vegana
+            <input type="checkbox" name="refeicao" value="sem glúten"> Sem glúten            
+        </div>
+
+        <div>
+            <label for="tel">Número para contato:</label>
+            <input type="tel" name="" id="" placeholder="(12)12345-6789">
+        </div>
+
+        <div>
+            <label for="destino">Destino:</label>
+            <select name="destino" id="destino">
+                <option value="paris">Paris</option>
+                <option value="nova-york">Nova York</option>
+                <option value="londres">Londres</option>
+                <option value="tokyo">Tóquio</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Estados Unidos">Estados Unidos</option>
+                <option value="Canadá">Canadá</option>
+                <option value="Reino Unido">Reino Unido</option>
+                <option value="França">França</option>
+                <option value="Alemanha">Alemanha</option>                
+                <option value="Austrália">Austrália</option>
+                <option value="China">China</option>
+                <option value="Índia">Índia</option>
+            </select>
+        </div>
+
+        <div>
+            <label >Preferência de assento:
+                <input type="radio" name="radio" value="janela">Janela
+            <input type="radio" name="radio" value="corredor">Corredor
+            <input type="radio" name="radio" value="emergencia">Saída de emergência
+            </label>            
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>
