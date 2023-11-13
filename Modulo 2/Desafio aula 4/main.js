@@ -36,3 +36,28 @@ for (const produtoAtual of produtosSeparados) {
   
   // exibe o objeto completo listaDeVenda
   console.log(listaDaVenda);
+
+  //declarando objeto dos valores
+  const totais = {
+    valorTotal: 999, // Valor total da venda
+    valorTotalDesconto: 999, // Valor total com desconto
+    quantidadeDeProdutos: 999, // Quantidade de produtos na venda
+  }
+
+  // declarando e inicializando as variáveis do total
+let valorTotal = 0;
+let valorTotalDesconto = 0;
+let quantidadeDeProdutos = 0;
+
+// iterando a listaDaVenda
+for (const produto of listaDaVenda) {
+  // somando os valores
+  valorTotal += produto.valor;
+  valorTotalDesconto += produto.cupom;
+  quantidadeDeProdutos += produto.quantidade;
+}
+
+// exibindo os totais
+console.log(`Valor Total: ${valorTotal}`);
+console.log(`Valor Total com Desconto: ${valorTotalDesconto}`);
+console.log(`Quantidade de Produtos: ${quantidadeDeProdutos}`);
