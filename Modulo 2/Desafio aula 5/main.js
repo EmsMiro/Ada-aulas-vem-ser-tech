@@ -17,38 +17,46 @@ Acima de 27 - Sobrepeso
 */
 
 /* Declarando as variáveis para cálculo do imc*/
-const peso = 85;
-const altura = 1.80;
-const idade = 65;
+const peso = parseFloat(prompt('Digite seu peso: '));
+const altura = parseFloat(prompt('Digite sua altura: '));
+const idade = parseInt(prompt('Digite sua idade: '));
 const imc = peso / (altura * altura);
 
 /*Array com strings para cada faixa de classificacao do imc*/
 const classificacaoImc = ['Muito abaixo do peso', 'Abaixo do peso', 'Peso normal', 'Sobrepeso', 'Obesidade grau I', 'Obesidade grau II', 'Obesidade grau III', 'Baixo peso', 'Adequado', 'Sobrepeso']
 
+/*Conectando os resultados do código Js com a DOM*/
+
+const resultadoImc = document.querySelector('#resultado-imc');
+resultadoImc.innerHTML = `Resultado IMC: ${imc.toFixed(2)}`;
+
+const faixaImc = document.querySelector('#faixa-imc');
+
+
 /*Primeira forma de resolução usando if aninhado*/
 
 if (idade >= 65) {
   if (imc <= 22) {
-    console.log(classificacaoImc[7])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[7]}`;
   } else if (imc < 27) {
-    console.log(classificacaoImc[8])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[8]}`;
   } else {
-    console.log(classificacaoImc[9])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[9]}`;
   }
 
 } else if (idade < 65) {
   if (imc <= 16.9) {
-    console.log(classificacaoImc[0])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[0]}`;
   } else if (imc < 18.5) {
-    console.log(classificacaoImc[1])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[1]}`;
   } else if (imc < 25) {
-    console.log(classificacaoImc[2])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[2]}`;
   } else if (imc < 30) {
-    console.log(classificacaoImc[3])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[3]}`;
   } else if (imc < 35) {
-    console.log(classificacaoImc[4])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[4]}`;
   } else if (imc >= 40) {
-    console.log(classificacaoImc[5])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[5]}`;
   }
 }
 
@@ -58,34 +66,34 @@ if (idade >= 65) {
 
  switch (true) {
   case idade >= 65 && imc <= 22:
-    console.log(classificacaoImc[7])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[7]}`;
     break;
   case idade >= 65 && imc < 27:
-    console.log(classificacaoImc[8])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[8]}`;
     break;
   case idade >= 65 && imc > 27:
-    console.log(classificacaoImc[9])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[9]}`;
     break;
   case idade < 65 && imc <= 16.9:
-    console.log(classificacaoImc[0])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[0]}`;
     break;
   case idade < 65 && imc < 18.5:
-    console.log(classificacaoImc[1])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[1]}`;
     break;
   case idade < 65 && imc < 25:
-    console.log(classificacaoImc[2])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[2]}`;
     break;
   case idade < 65 && imc < 30:
-    console.log(classificacaoImc[3])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[3]}`;
     break;
   case idade < 65 && imc < 35:
-    console.log(classificacaoImc[4])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[4]}`;
     break;
   case idade < 65 && imc >= 40:
-    console.log(classificacaoImc[5])
+    faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacaoImc[5]}`;
     break;
   default:
-    console.log('Dados inválidos.');
+    faixaImc.innerHTML = 'Dados inválidos.';
 } 
 
 /* Terceira forma de resolução usando if e switch case*/
@@ -127,14 +135,14 @@ switch (classificacao) {
     case classificacaoImc[3]:
     case classificacaoImc[4]:
     case classificacaoImc[5]:
-        console.log(classificacao);
-        break;
+        faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacao}`;
+  break;
     case classificacaoImc[7]:
     case classificacaoImc[8]:
     case classificacaoImc[9]:
-        console.log(classificacao);
-        break;
+        faixaImc.innerHTML = `Sua faixa de IMC atual é: ${classificacao}`;
+   break;
     default:
-        console.log('Dados inválidos.');
+        faixaImc.innerHTML = 'Dados inválidos.';
 }
 
