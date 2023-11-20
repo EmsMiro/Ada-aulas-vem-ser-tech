@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/mobile.css">
+  </head>
+  <body>
+
+    <header>
+      <h1 class="header-title">
+        To Do <br />
+        List
+      </h1>
+      <span class="header-icon">
+        <img
+          width="50"
+          height="50"
+          src="https://img.icons8.com/fluency-systems-regular/50/light-on--v1.png"
+          alt="light-on--v1"
+        />
+      </span>
+    </header>
+    <main>
+        <section class="create-task-section grid-item">
+            <div class='task-section'>
+            <div class='task-container'>
+              <div class='text-content'>
+                <h3>Estudar para prova</h3>
+                <p>Lembrar de revisar os tópicos de matemática</p>
+              </div>
+              <div class='icons'>
+                <span class='icon-done'><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADBUlEQVR4nO2ZzUpVURTHf+nNkO4g0wapT1GWPkEh1yYi0aTsKbKEclJJgzDRaNItSRqVEPUAJT5B4kht0AepfUgUZNbAWLAuLHbHc8/HPucY3D9suNy711r/fc7a6+tCAw004ANNQB8wCswBS8Am8FvXpn73FLgC9KpM4egGxoEPwE7M9R64CXQVQbwduAdsJyDurl/AXeBwXuTPAV8CiHwE7gPngWN6yP26OoDjwAWgCqwFyH8GzmZJvKRP3TX8EqgAzTF1DQCvAvRN6+9e0Qq8cAwtA6c86O4HVhzdz9WmF5QCyM8AB30ZAMrAo4BDeHkTrttcJTtcc2xN+biweZHf7RBDJES7E23EbfLCrLH7CWhL6zrLnn0+yp1YTeNK3U6SOk3+6HeSXWcc4XEnzheFecPjRlShZqe2kSRVFAYMj7dRC8A+pzzwnhWViPj1D+B6yD6xvW74nIyifNQISG2TBfmqsfGtzv6HZu9IFANzRkAKsyzJ7wC368gMm71PohhZMgJSVWZJvhrBr3vM/sUohr4aAUlmRZIXHHFK7rqw8b+lzt5bwB9gIoRMGvKCA04+8HqAn3VIpSWf6ABxXGgihJwP8olcyF5iaQPDsBvJkifyghNxL7ENo9LDkuAQK57ICy7GDaNJEtm+XfplWQ9SzoBmjK5LUQR6jcBajFLCl89biO0No09yQl006dApSTEnspPAd+COh+nbmSTFHDoxqwnK6KMoLBgeYUXfP+jSmFsTluYib1SM/a24DQ067rNRRdq8vFAG3hj74pax0a6Jo6ZE5jZ54bGxu5G0qUdnlTaqyMgja4w5NgfTKpzO8RBjji2JZKlR0jGfVTzr+U6UHbeR9SzmwDgUrQGHWPUUnSrOha2R9zbctW9iKqBUmNfpQZzmv6RJaiFA36TPJx+EISe919a6NuDDmvI7tJ9o0c89WpjNhMgPkhPa9G3YZJd0belTP0QB6NSJ2bsExKW2kfLgKHsATTp0uqw1+6J2dtu65PNr/W1Em5Q98TdrAw3wn+MvqaefoCT/7r4AAAAASUVORK5CYII="></span>
+                <span class='icon-edit'><img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/edit--v1.png" alt="edit--v1" /></span>
+                <span class='icon-delete'><img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/trash--v1.png" alt="trash--v1" /></span>
+              </div>
+            
+            </div>
+            <div class='task-container'>
+                <div class='text-content'>
+                  <h3>Estudar para prova</h3>
+                  <p>Lembrar de revisar os tópicos de matemática</p>
+                </div>
+                <div class='icons'>
+                  <span class='icon-done'><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADBUlEQVR4nO2ZzUpVURTHf+nNkO4g0wapT1GWPkEh1yYi0aTsKbKEclJJgzDRaNItSRqVEPUAJT5B4kht0AepfUgUZNbAWLAuLHbHc8/HPucY3D9suNy711r/fc7a6+tCAw004ANNQB8wCswBS8Am8FvXpn73FLgC9KpM4egGxoEPwE7M9R64CXQVQbwduAdsJyDurl/AXeBwXuTPAV8CiHwE7gPngWN6yP26OoDjwAWgCqwFyH8GzmZJvKRP3TX8EqgAzTF1DQCvAvRN6+9e0Qq8cAwtA6c86O4HVhzdz9WmF5QCyM8AB30ZAMrAo4BDeHkTrttcJTtcc2xN+biweZHf7RBDJES7E23EbfLCrLH7CWhL6zrLnn0+yp1YTeNK3U6SOk3+6HeSXWcc4XEnzheFecPjRlShZqe2kSRVFAYMj7dRC8A+pzzwnhWViPj1D+B6yD6xvW74nIyifNQISG2TBfmqsfGtzv6HZu9IFANzRkAKsyzJ7wC368gMm71PohhZMgJSVWZJvhrBr3vM/sUohr4aAUlmRZIXHHFK7rqw8b+lzt5bwB9gIoRMGvKCA04+8HqAn3VIpSWf6ABxXGgihJwP8olcyF5iaQPDsBvJkifyghNxL7ENo9LDkuAQK57ICy7GDaNJEtm+XfplWQ9SzoBmjK5LUQR6jcBajFLCl89biO0No09yQl006dApSTEnspPAd+COh+nbmSTFHDoxqwnK6KMoLBgeYUXfP+jSmFsTluYib1SM/a24DQ067rNRRdq8vFAG3hj74pax0a6Jo6ZE5jZ54bGxu5G0qUdnlTaqyMgja4w5NgfTKpzO8RBjji2JZKlR0jGfVTzr+U6UHbeR9SzmwDgUrQGHWPUUnSrOha2R9zbctW9iKqBUmNfpQZzmv6RJaiFA36TPJx+EISe919a6NuDDmvI7tJ9o0c89WpjNhMgPkhPa9G3YZJd0belTP0QB6NSJ2bsExKW2kfLgKHsATTp0uqw1+6J2dtu65PNr/W1Em5Q98TdrAw3wn+MvqaefoCT/7r4AAAAASUVORK5CYII="></span>
+                  <span class='icon-edit'><img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/edit--v1.png" alt="edit--v1" /></span>
+                  <span class='icon-delete'><img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/trash--v1.png" alt="trash--v1" /></span>
+                </div>
+              
+              </div>
+        </section>
+        <section class="task-section grid-item">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dolores obcaecati iusto velit accusantium neque soluta perferendis? Animi sint minus a laboriosam exercitationem accusantium eius distinctio architecto excepturi, voluptas officiis?</p>
+        </section>
+        <section class="search-section grid-item">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dolores obcaecati iusto velit accusantium neque soluta perferendis? Animi sint minus a laboriosam exercitationem accusantium eius distinctio architecto excepturi, voluptas officiis?</p>
+        </section>
+        <section class="filter-task-section grid-item">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga dolores obcaecati iusto velit accusantium neque soluta perferendis? Animi sint minus a laboriosam exercitationem accusantium eius distinctio architecto excepturi, voluptas officiis?</p>
+        </section>
+    </main>    
+    <footer>
+      <p class="footer-paragraph">&copy;
+        Coded by E. Miro - Contact me:     
+      </p>
+      <img
+      width="40"
+      height="40"
+      src="https://img.icons8.com/fluency-systems-regular/96/linkedin.png"
+      alt="linkedin"
+  />
+  <img
+    width="40"
+    height="40"
+    src="https://img.icons8.com/fluency-systems-regular/96/github.png"
+    alt="github"
+/>
+    </footer>
+  </body>
+</html>

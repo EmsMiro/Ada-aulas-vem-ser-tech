@@ -1,0 +1,87 @@
+
+
+/* Importando arquivo de fonte*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+--ff-primary: 'Montserrat', sans-serif;
+--ff-secondary: 'Poppins', sans-serif;
+--clr-background-light: #FCF4E7;
+--clr-background-dark: #32342F;
+-clr-input-dark: #D9D9D9;
+--clr-button: #B8CF75DE;
+--clr-white: #FFFFFF;
+--clr-black:#000000;
+--clr-yellow: #F6D700;
+--clr-light-salmon:#E5BFAF94;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    margin: 60px;
+    /* width: 960px; */
+    background-color: var(--clr-background-light);
+}
+
+header {
+    background-color: rgb(172, 172, 166);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--ff-primary);
+    /* width: calc(100% - 2 * 120px); */
+    margin: 0 auto;
+    /*    padding: 0 120px; */  
+  }
+  
+  .header-title {
+    font-size: 34px;
+    width: 100%;
+  }
+  
+  .header-icon {
+    margin-top: 20px;    
+  }
+
+  .header-icon:hover img {
+   border: 2px solid var(--clr-background-dark);
+   border-radius: 10px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 20px;
+    background-color: aqua;
+    margin: 50px 0;
+}
+
+.grid-item {
+    background-color: #b35e5e;
+    padding: 20px;
+}
+
+.grid-item:nth-child(2),
+.grid-item:nth-child(4) {
+    background-color: greenyellow;
+}
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--ff-secondary);
+    text-align: center;
+    background-color: #F6D700;
+    /* margin-top: 15rem; */
+  }
+
+  .footer-paragraph {
+    margin-right: 10px;
+  }
+  
+  /* Importando estilos específicos para tablets e dispositivos móveis */
+@import './tablet.css' screen and (max-width: 1024px);
+@import './mobile.css' screen and (max-width: 768px);
