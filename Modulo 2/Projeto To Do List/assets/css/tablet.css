@@ -1,0 +1,50 @@
+@media(max-width:1024px){
+
+    /* Estilos do header*/
+    header {
+        flex-direction: row; /* Mantém a direção do flex container como linha */
+        align-items: center; /* Alinha os itens verticalmente no centro */        
+      }
+    
+      .header-title {
+        width: 90%; /* Define a largura do título */       
+      }
+    
+      .header-icon {
+        width: 10%; 
+        margin: 0;
+      }
+
+    /*Alinhando os h3 de cada section*/
+    .title-section {
+        text-align: center;
+    }
+
+/*Estilos do form e da section create task*/
+form {
+    margin-left: 3rem;
+}
+
+#create-task-button {
+    width: 30%;
+  }
+
+/*Estilos das tasks*/
+
+.task-container h3 {
+  font-size: 16px;
+}
+.task-container {
+    height: fit-content;
+    width: 80%;
+    font-size: 14px;
+    padding: 20px;    
+    margin: 10px auto;    
+  }
+  .icons img {
+    display: flex;
+    width: 30px;      
+    height: 30px;
+    margin-bottom: 5px;
+  }
+}

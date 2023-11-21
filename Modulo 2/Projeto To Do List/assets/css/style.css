@@ -63,11 +63,124 @@ header {
     padding: 20px;
 }
 
+/*Alteração da ordem de display do grid*/
+.createTask {
+  order: 1;
+}
+
+.task {
+  order: 2;
+  grid-row: span 3;
+}
+
+.search {
+  order: 3;
+}
+
+.filter {
+  order: 4;
+}
+
 .grid-item:nth-child(2),
 .grid-item:nth-child(4) {
     background-color: greenyellow;
 }
 
+/*Estilo da section createTask*/
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+}
+
+.createTask {  
+  font-family: var(--ff-secondary);
+}
+
+.input-style {  
+  font-family: var(--ff-secondary);
+  font-size: 16px;
+  width: 90%;
+  max-width: 495px;
+  height: 40px;
+  max-height: 51.716px;
+  flex-shrink: 1;
+  border-radius: 5px;
+  border: 1px solid #000;
+  background: rgba(229, 191, 175, 0.58);
+/* Light Right */
+box-shadow: -4px 4px 0px 0px rgba(0, 0, 0, 0.25); 
+}
+
+label {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+#create-task-button {
+  align-self: center;
+  font-family: var(--ff-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
+  width: 146px;
+  height: 34.064px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: rgba(184, 207, 117, 0.87);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#create-task-button:hover {
+  cursor: pointer;
+  background-color: rgb(134, 204, 166);
+}
+
+/*Estilo da section tasks*/
+
+.task {
+  font-family: var(--ff-secondary);
+}
+
+.task-container {  
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  justify-content: space-between;
+  padding: 20px;
+  /* height: 120px; */
+  width: 90%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  filter: drop-shadow(-4px 4px 0px rgba(0, 0, 0, 0.25));
+}
+
+#task-list {
+  max-height: 400px; /* Altura máxima para a seção de tarefas antes da barra de rolagem aparecer */
+  overflow-y: auto; /* Adiciona a barra de rolagem vertical quando necessário */
+}
+
+.icons {
+padding-top: 20px; 
+}
+
+.icon-done:hover img{
+  background-color: #5ec57e;
+  border-radius:25px;
+}
+
+.icon-edit:hover img {
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.icon-delete:hover img {
+  background-color: #c60b0b;
+  border-radius: 25px;
+}
+
+/*Estilo do footer*/
   footer {
     display: flex;
     justify-content: center;
