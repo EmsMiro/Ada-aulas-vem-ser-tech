@@ -27,6 +27,7 @@ form {
 
 #create-task-button {
     width: 30%;
+    margin-bottom: 10px;
   }
 
 /*Estilos das tasks*/
@@ -46,5 +47,10 @@ form {
     width: 30px;      
     height: 30px;
     margin-bottom: 5px;
+  }
+
+  /*Estilo do dropdown*/
+  .dropdown {
+    width: 80%;
   }
 }

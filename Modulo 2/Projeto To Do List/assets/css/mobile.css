@@ -7,12 +7,12 @@
       }
     
       .header-title {
-        width: 70%; /* Define a largura do título */
-        margin-right: 50px; /* Adiciona uma margem à direita para criar espaço entre os elementos */
+        width: 50%; /* Define a largura do título */
+        margin-right: 20px; /* Adiciona uma margem à direita para criar espaço entre os elementos */
       }
     
       .header-icon {
-        width: 30%; 
+        width: 20%; 
         margin: 0;
       }
 
@@ -66,5 +66,10 @@
       margin-bottom: 5px;
     }
 
+    /*Estilo do dropdown da section filter*/
+    .dropdown {
+      width: fit-content; 
+      padding-left: 2%;     
+    }
       
 }
