@@ -322,6 +322,15 @@ nav {
   background-color: rgb(134, 204, 166);
 }
 
+/*Estilo da animação dinâmica de texto riscado*/
+.text-content {
+  text-decoration: none; /* ou outro estilo padrão */
+}
+
+.task-container.completed .text-content {
+  text-decoration: line-through;
+}
+
 /*Estilo do footer*/
   footer {
     display: flex;
