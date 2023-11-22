@@ -66,4 +66,91 @@ function showTask (task) {
   // escolhendo a cor aleatória para o background da div apartir das pré-setadas no array colorsPreset
   const chosenColor = setRandomColor();
   taskDiv.style.backgroundColor = chosenColor;
+
+  // definindo o id da tarefa como atributo de dados na div da tarefa
+  taskDiv.dataset.taskId = task.id;
+
+  // adicionando um escutador de eventos no icone 'icon-done' na taskDiv
+  // alterando a propriedade 'concluida:true' do objeto da tarefa quando o ícone é clicado pela primeira vez
+  // e alterando novamente o valor da propriedade 'concluida:false' se o icone foir clicado novamente
+  // adicionando animaçao que deixa o texto riscado
+  taskDiv.querySelector('.icon-done').addEventListener('click', function(event) {
+    
+    event.stopPropagation();
+
+    task.concluida = !task.concluida;
+
+    const textContent = taskDiv.querySelector('.text-content');
+
+    if(task.concluida) {
+        textContent.style.textDecoration = 'line-through';
+    } else {
+        textContent.style.textDecoration = 'none';
+    }
+  });
+}
+
+//escutador de eventos de clique geral (página inteira)
+document.addEventListener('click', function(event) {
+    // limitando o escutador de eventos para o target (alvo)
+    const target = event.target;
+
+    // verificando se o target tem a classe 'icon-done'
+    if(target.classList.contains('icon-done')) {
+        // buscando o elemento pai mais próximo do target clicado
+        const taskDiv = target.closest('.task-container');
+        // obtendo o id da tarefa e parseando para um número inteiro
+        const taskId = parseInt(taskDiv.dataset.taskId);
+        // Encontrando o índice da tarefa no array 'tasks' com base no id
+        const taskIndex = tasks.findIndex(task => task.id === taskId);
+
+        // verifica se a tarefa foi encontrada no array
+        if (taskIndex !== -1) {
+            tasks[taskIndex].concluida = !tasks[taskIndex].concluida;
+            const textContent = taskDiv.querySelector('.text-content');
+
+            // implementando condicional para adicionar animação e estilo css ao conteúdo de texto da div task
+            if (tasks[taskIndex].concluida) {
+                textContent.style.textDecoration = 'line-through';
+            } else {
+                textContent.style.textDecoration = 'none';
+            }
+
+            // alterando o estilo da classe css 'completed' de acordo com o valor booleano da propriedade 'concluida' do objeto.
+            taskDiv.classList.toggle('completed', tasks[taskIndex].concluida);
+        }
+    }
+});
+
+const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+dropdownItems.forEach(item => {
+    item.addEventListener('click', function () {
+        const filterType = this.textContent.trim().toLowerCase();
+
+        // atualizando a exibição com base no filtro do menu
+        updateTaskDisplay(filterType);
+    });
+});
+
+// função para atualizar a exibição de tarefas com base no tipo de filtro do menu dropdown
+function updateTaskDisplay(filterType) {
+    const taskList = document.querySelector('#task-list');
+    const taskContainers = document.querySelectorAll('.task-container');
+
+    // iterando sobre todas as tarefas e ajustando a visibilidade
+    taskContainers.forEach(container => {
+        const taskId = parseInt(container.dataset.taskId);
+        const taskIndex = tasks.findIndex(task => task.id === taskId);
+
+        if (taskIndex !== -1) {
+            const task = tasks[taskIndex];
+
+            if (filterType === 'todas as tarefas' || (filterType === 'tarefas concluídas' && task.concluida) || (filterType === 'tarefas não concluídas' && !task.concluida)) {
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+    });
 }
