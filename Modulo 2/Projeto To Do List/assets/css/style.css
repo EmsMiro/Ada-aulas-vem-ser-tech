@@ -123,9 +123,8 @@ label {
   font-size: 16px;
   font-weight: 400;
   margin-top: 10px;
-  width: 146px;
-  height: 34.064px;
-  flex-shrink: 0;
+  width: 25%;
+  height: 40px;  
   border-radius: 10px;
   border: 1px solid #000;
   background: rgba(184, 207, 117, 0.87);
@@ -147,8 +146,7 @@ label {
   display: flex;
   font-family: 'Poppins', sans-serif;
   justify-content: space-between;
-  padding: 20px;
-  /* height: 120px; */
+  padding: 20px;  
   width: 90%;
   border: 2px solid #000;
   border-radius: 5px;
@@ -157,8 +155,8 @@ label {
 }
 
 #task-list {
-  max-height: 400px; /* Altura máxima para a seção de tarefas antes da barra de rolagem aparecer */
-  overflow-y: auto; /* Adiciona a barra de rolagem vertical quando necessário */
+  max-height: 400px; 
+  overflow-y: auto; 
 }
 
 .icons {
@@ -184,8 +182,8 @@ padding-top: 20px;
 
 .dropdown {
   font-family: "Poppins", sans-serif;
-  width: 90%;
-  
+  width: 90%;  
+  align-items: center;
 }
 
 .dropdown-title {
@@ -264,6 +262,7 @@ nav {
   flex-direction: column;
   align-items: left;
   padding: 10px;
+  margin: 0 auto;
   width: 90%;
 }
 
