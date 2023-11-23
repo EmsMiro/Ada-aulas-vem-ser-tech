@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/mobile.css">
-    <link rel="stylesheet" href="./assets/css/tablet.css">
+    <link rel="stylesheet" href="./assets/css/mobile.css" />
+    <link rel="stylesheet" href="./assets/css/tablet.css" />
   </head>
-  <body>
 
+  <body>
     <header>
       <h1 class="header-title">
         To Do <br />
@@ -25,82 +25,139 @@
       </span>
     </header>
     <main>
-        <section class="createTask grid-item">          
-              <h3 class="title title-section">Criar nova tarefa</h3>
-              <form action="#">
-                <label for="input-title">Título</label>
-                <input type="text" id="input-title" name="input-title" class="input-style" minlength="4" autocomplete="off" required>
-                <label for="input-description">Descrição</label>
-                <input type="text" id="input-description" name="input-description" class="input-style" minlength="20" autocomplete="off" required>
-                <button id="create-task-button">Criar</button>
-              </form>
-        </section>
-        <section class="task grid-item" id="task-list" style="background-color: blueviolet;">
-          <h3 class="title-section">Suas Tarefas</h3>          
-        </section>
-        
-        <section class="filter grid-item">
-          <div class="dropdown">
-            <div class="dropdown-title">
-              <h3>Filtrar tarefas</h3>
-              <span><img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/50/expand-arrow--v1.png" alt="expand-arrow--v1" /></span>
-            </div>          
-            <nav>
-              <ul class="task-dropdown-list">
-                <li class="dropdown-item">Todas as tarefas</li>
-                <li class="dropdown-item">Tarefas concluídas</li>
-                <li class="dropdown-item">Tarefas não concluídas</li>
-              </ul>
-            </nav>
+      <section class="createTask grid-item">
+        <h3 class="title title-section">Criar nova tarefa</h3>
+        <form action="#">
+          <label for="input-title">Título</label>
+          <input
+            type="text"
+            id="input-title"
+            name="input-title"
+            class="input-style"
+            minlength="4"
+            autocomplete="off"
+            required
+          />
+          <label for="input-description">Descrição</label>
+          <input
+            type="text"
+            id="input-description"
+            name="input-description"
+            class="input-style"
+            minlength="20"
+            autocomplete="off"
+            required
+          />
+          <button id="create-task-button">Criar</button>
+        </form>
+      </section>
+
+      <section class="task grid-item" id="task-list">
+        <h3 class="title-section">Suas Tarefas</h3>
+      </section>
+
+      <section class="filter grid-item">
+        <div class="dropdown">
+          <div class="dropdown-title">
+            <h3>Filtrar tarefas</h3>
+            <span
+              ><img
+                width="20"
+                height="20"
+                src="https://img.icons8.com/fluency-systems-regular/50/expand-arrow--v1.png"
+                alt="expand-arrow--v1"
+            /></span>
           </div>
-        </section>
-        <section class="search grid-item">
-          <div class="title-search">            
-            <h3>Pesquisar tarefa</h3>
-            <span><img width="30" height="30" src="https://img.icons8.com/fluency-systems-regular/48/000000/search--v1.png" alt="search--v1"/></span>
-          </div>
-          <div class="input-search">
-            <label for="input-search"></label>
-            <input type="text" id="input-search" name="input-search" minlength="5" placeholder="Digite o nome/descrição da tarefa">
-          </div>
-          <div class="button-container">
-            <button id="button-search">Pesquisar</button>
-          </div>
-        </section>
-    </main>  
+          <nav>
+            <ul class="task-dropdown-list">
+              <li class="dropdown-item">Todas as tarefas</li>
+              <li class="dropdown-item">Tarefas concluídas</li>
+              <li class="dropdown-item">Tarefas não concluídas</li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      <section class="search grid-item">
+        <div class="title-search">
+          <h3>Pesquisar tarefa</h3>
+          <span
+            ><img
+              width="30"
+              height="30"
+              src="https://img.icons8.com/fluency-systems-regular/48/000000/search--v1.png"
+              alt="search--v1"
+          /></span>
+        </div>
+        <div class="input-search">
+          <label for="input-search"></label>
+          <input
+            type="text"
+            id="input-search"
+            name="input-search"
+            minlength="5"
+            placeholder="Digite o nome/descrição da tarefa"
+          />
+        </div>
+        <div class="button-container">
+          <button id="button-search">Pesquisar</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal EDIT -->
+    <div id="modalEdit" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <label for="input-title-modal">Título:</label>
+        <input type="text" id="input-title-modal" />
+        <label for="input-description-modal">Descrição:</label>
+        <input type="text" id="input-description-modal" />
+        <button onclick="saveChanges()">Salvar Alterações</button>
+      </div>
+    </div>
+
+    <!-- Trash icon-->
     <div class="trash-div">
-      <img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/waste-restore.png" alt="waste-restore"/>
+      <span class="trash-icon">
+        <img
+          width="48"
+          height="48"
+          src="https://img.icons8.com/fluency-systems-regular/48/waste-restore.png"
+          alt="waste-restore"
+        />
+      </span>
       <div class="tooltip">Recuperar tarefas</div>
-    </div> 
+    </div>
+
+    <!-- Modal DELETE -->
+    <div id="modalDelete" class="modal-delete">
+      <div class="delete-modal-content">
+        <span class="close" onclick="closeDeleteModal()">&times;</span>
+        <h3>Tarefas excluídas</h3>
+        <div id="deleted-tasks-container" class="deleted-tasks-container"></div>
+        <button id="restore-button" onclick="restoreSelectedTasks()">
+          Restaurar tarefas
+        </button>
+      </div>
+    </div>
+
     <footer>
-      <p class="footer-paragraph">&copy;
-        Coded by E. Miro - Contact me:     
-      </p>
+      <p class="footer-paragraph">&copy; Coded by E. Miro - Contact me:</p>
       <img
-      width="40"
-      height="40"
-      src="https://img.icons8.com/fluency-systems-regular/96/linkedin.png"
-      alt="linkedin"
-  />
-  <img
-    width="40"
-    height="40"
-    src="https://img.icons8.com/fluency-systems-regular/96/github.png"
-    alt="github"
-/>
+        width="40"
+        height="40"
+        src="https://img.icons8.com/fluency-systems-regular/96/linkedin.png"
+        alt="linkedin"
+      />
+      <img
+        width="40"
+        height="40"
+        src="https://img.icons8.com/fluency-systems-regular/96/github.png"
+        alt="github"
+      />
     </footer>
-    
-  <!-- Modal HTML -->
-<div id="modalEdit" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>    
-    <label for="input-title-modal">Título:</label>
-    <input type="text" id="input-title-modal">
-    <label for="input-description-modal">Descrição:</label>
-    <input type="text" id="input-description-modal">
-    <button onclick="saveChanges()">Salvar Alterações</button>
-  </div>
-</div>
+
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
