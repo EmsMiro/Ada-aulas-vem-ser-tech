@@ -36,8 +36,9 @@
               </form>
         </section>
         <section class="task grid-item" id="task-list" style="background-color: blueviolet;">
-          <h3 class="title-section">Suas Tarefas</h3>
+          <h3 class="title-section">Suas Tarefas</h3>          
         </section>
+        
         <section class="filter grid-item">
           <div class="dropdown">
             <div class="dropdown-title">
@@ -66,7 +67,11 @@
             <button id="button-search">Pesquisar</button>
           </div>
         </section>
-    </main>    
+    </main>  
+    <div class="trash-div">
+      <img width="48" height="48" src="https://img.icons8.com/fluency-systems-regular/48/waste-restore.png" alt="waste-restore"/>
+      <div class="tooltip">Recuperar tarefas</div>
+    </div> 
     <footer>
       <p class="footer-paragraph">&copy;
         Coded by E. Miro - Contact me:     
@@ -84,18 +89,18 @@
     alt="github"
 />
     </footer>
-
-    <!-- Modal de edição da task -->
-    <div id="edit-modal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <label for="editTitle">Título:</label>
-        <input type="text" id="editTitle">
-        <label for="editDescription">Descrição:</label>
-        <input type="text" id="editDescription">
-        <button id="saveChanges"> Salvar edições</button>
-      </div>
-    </div>
+    
+  <!-- Modal HTML -->
+<div id="modalEdit" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>    
+    <label for="input-title-modal">Título:</label>
+    <input type="text" id="input-title-modal">
+    <label for="input-description-modal">Descrição:</label>
+    <input type="text" id="input-description-modal">
+    <button onclick="saveChanges()">Salvar Alterações</button>
+  </div>
+</div>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
