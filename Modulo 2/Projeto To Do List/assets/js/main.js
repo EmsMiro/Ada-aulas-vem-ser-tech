@@ -87,7 +87,74 @@ function showTask (task) {
     } else {
         textContent.style.textDecoration = 'none';
     }
-  });
+  });  
+
+  
+  // adicionando um escutador de eventos no ícone 'icon-edit' na taskDiv
+  taskDiv.querySelector('.icon-edit').addEventListener('click', function (event) {
+    event.stopPropagation();
+    openModal(event);    
+  }); 
+  
+}
+
+
+// função para abrir o modal
+function openModal(event) {
+    const modal = document.getElementById('modalEdit');
+    modal.style.display = 'block';
+    
+    // obtendo o id da tarefa associada ao ícone 'icon-edit' (edição)
+    const taskDiv = event.target.closest('.task-container');
+    const taskId = parseInt(taskDiv.dataset.taskId);
+    const taskIndex = tasks.findIndex(task => task.id === taskId);
+
+    if (taskIndex !== -1) {
+        const task = tasks[taskIndex];
+
+        // anexando os inputs com os valores da tarefa
+        document.getElementById('input-title-modal').value = task.titulo;
+        document.getElementById('input-description-modal').value = task.descricao;
+
+        // associando a tarefa ao modal para referência posterior
+        modal.currentTask = task;
+        modal.currentTaskDiv = taskDiv;
+    }
+}
+
+// Função para salvar as alterações no modal
+function saveChanges() {
+    const modal = document.getElementById('modalEdit');
+    modal.style.display = 'none';
+    
+    // const modal = document.getElementById('modalEdit');
+    // modal.style.display = 'none';
+
+    // Obter os novos valores dos inputs
+    const newTitle = document.getElementById('input-title-modal').value;
+    const newDescription = document.getElementById('input-description-modal').value;
+
+    // Atualizando os valores da tarefa atual
+    const task = modal.currentTask;
+    task.titulo = newTitle;
+    task.descricao = newDescription;
+
+   // Atualizando a exibição da tarefa na tela
+   const taskDiv = modal.currentTaskDiv;
+   const textContent = taskDiv.querySelector('.text-content');
+   textContent.querySelector('h3').textContent = newTitle;
+   textContent.querySelector('p').textContent = newDescription;  
+  }
+  // Adicionando um escutador de eventos para fechar o modal quando o botão 'close' é clicado
+const closeButton = document.querySelector('.close');
+if (closeButton) {
+    closeButton.addEventListener('click', closeModal);
+}
+
+// Função para fechar o modal
+function closeModal() {
+    const modal = document.getElementById('modalEdit');
+    modal.style.display = 'none';    
 }
 
 //escutador de eventos de clique geral (página inteira)
@@ -122,8 +189,12 @@ document.addEventListener('click', function(event) {
     }
 });
 
+
+
+//selecionando os itens do dropdown
 const dropdownItems = document.querySelectorAll('.dropdown-item');
 
+// iterando os itens e passando a função para filtrar o conteúdo de acordo com o tipo da task
 dropdownItems.forEach(item => {
     item.addEventListener('click', function () {
         const filterType = this.textContent.trim().toLowerCase();
@@ -154,3 +225,9 @@ function updateTaskDisplay(filterType) {
         }
     });
 }
+
+
+
+
+
+
