@@ -9,10 +9,43 @@ console.log(deletedTasks);
 
 // Função para criar a tarefa
 function addTask() {
+   //prevenir o comportamento padrão de envio do formulário
+   event.preventDefault();
+
   // capturando os valores dos inputs
   const title = document.querySelector("#input-title").value;
   const description = document.querySelector("#input-description").value;
 
+  // validando os campos de input para que o usuário não envie espaços em branco ou tarefas sem título/descrição
+  if(!title.trim() || !description.trim()) {
+    alert("Por favor preencha o título e a descrição da tarefa")
+    return;
+  } 
+
+  // Verificando se o título contém apenas números ou menos de 5 caracteres
+  if (/^\d+$/.test(title) || title.length < 5) {
+    alert("O título deve conter pelo menos 5 caracteres e não pode consistir apenas em números.");
+    return;
+  }
+
+  // Verificando se a descrição contém apenas números ou menos de 5 caracteres
+  if (/^\d+$/.test(description) || description.length < 5) {
+    alert("A descrição deve conter pelo menos 5 caracteres e não pode consistir apenas em números.");
+    return;
+  }
+
+  // verifica se já existe uma tarefa com o mesmo título
+  if (tasks.some(task => task.titulo === title)) {
+    alert("Já existe uma tarefa com o mesmo título. Escolha um título único.");
+    return;
+  }
+
+  // verifica se já existe uma tarefa com a mesma descrição
+  if (tasks.some(task => task.descricao === description)) {
+    alert("Já existe uma tarefa com a mesma descrição. Escolha uma descrição única.");
+    return;
+  }
+  
   // criando objeto com id único para cada tarefa
   const task = {
     id: new Date().getTime(),
@@ -32,6 +65,10 @@ function addTask() {
 
   // chamando a função que cria a div e mostra na tela para o user
   showTask(task);
+
+  // adicionando um escutador de eventos ao formulário
+  const formCreateTask = document.querySelector("form");
+  formCreateTask.addEventListener("submit", addTask);
 }
 
 // Adicionando um escutador de eventos ao botão criar e chamando a função addTask
@@ -205,7 +242,6 @@ function openModal(event) {
 // Função para salvar as alterações no modal 'edit-task'
 function saveChanges() {
   const modal = document.getElementById("modalEdit");
-  modal.style.display = "none";
 
   // Obter os novos valores dos inputs
   const newTitle = document.getElementById("input-title-modal").value;
@@ -213,6 +249,52 @@ function saveChanges() {
     "input-description-modal"
   ).value;
 
+  // verificando se o novo título é composto apenas por espaços em branco
+  if (/^\s+$/.test(newTitle)) {
+    alert("O título não pode consistir apenas em espaços em branco.");
+    return;
+  }
+
+  // verificando se a nova descrição é composta apenas por espaços em branco
+  if (/^\s+$/.test(newDescription)) {
+    alert("A descrição não pode consistir apenas em espaços em branco.");
+    return;
+  }
+
+  // Verificando se o novo título contém apenas números ou menos de 5 caracteres
+  if (/^\d+$/.test(newTitle) || newTitle.length < 5) {
+    alert("O título deve conter pelo menos 5 caracteres e não pode consistir apenas em números.");
+    return;
+  }
+
+  // Verificando se a nova descrição contém apenas números ou menos de 5 caracteres
+  if (/^\d+$/.test(newDescription) || newDescription.length < 5) {
+    alert("A descrição deve conter pelo menos 5 caracteres e não pode consistir apenas em números.");
+    return;
+  }
+
+   // Validando os campos para ver se o usuário tentou enviar uma tarefa com título ou descrição vazias
+   if (!newTitle.trim() || !newDescription.trim()) {
+    alert("O título e a descrição não podem estar vazios.");
+    return;
+  }  
+
+  // Verificando se o novo título já existe em outras tarefas
+  const isTitleDuplicate = tasks.some(task => task.titulo === newTitle && task.id !== modal.currentTask.id);
+  if (isTitleDuplicate) {
+    alert("Já existe uma tarefa com o mesmo título. Escolha um título único.");
+    return;
+  }
+
+  // Verificando se a nova descrição já existe em outras tarefas
+  const isDescriptionDuplicate = tasks.some(task => task.descricao === newDescription && task.id !== modal.currentTask.id);
+  if (isDescriptionDuplicate) {
+    alert("Já existe uma tarefa com a mesma descrição. Escolha uma descrição única.");
+    return;
+  }
+
+  modal.style.display = "none";
+  
   // Atualizando os valores da tarefa atual
   const task = modal.currentTask;
   task.titulo = newTitle;
@@ -320,7 +402,7 @@ function updateTaskDisplay(filterType) {
   // iterando sobre todas as tarefas e ajustando a visibilidade
   taskContainers.forEach((container) => {
     const taskId = parseInt(container.dataset.taskId);
-    const taskIndex = tasks.findIndex((task) => task.id === taskId);
+    const taskIndex = tasks.findIndex((task) => task.id === taskId);    
 
     if (taskIndex !== -1) {
       const task = tasks[taskIndex];
@@ -334,6 +416,7 @@ function updateTaskDisplay(filterType) {
       } else {
         container.style.display = "none";
       }
-    }
+    }   
   });
 }
+

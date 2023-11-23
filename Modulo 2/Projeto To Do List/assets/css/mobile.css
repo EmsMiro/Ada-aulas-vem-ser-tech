@@ -21,8 +21,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        width: 100%;
-        background-color: aqua;   
+        width: 100%;        
         margin: 20px 0;     
     } 
     
@@ -67,9 +66,19 @@
     }
 
     /*Estilo do dropdown da section filter*/
+    .filter{
+      width: 97%;
+      margin: 0 auto;
+    }
+
     .dropdown {
       width: fit-content; 
-      padding-left: 2%;     
+      padding-left: 3%;     
     }
+
+    /*Estilo do search*/
+    .search {
+      width: 90%;
+    }    
       
 }
