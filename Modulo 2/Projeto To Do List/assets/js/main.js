@@ -48,6 +48,10 @@ const colorsPreset = [
   "#dc6378",
   "#bf9692",
   "#8ac7de",
+  "#6da67a",
+  "#f1efa5",
+  "#fe9c6b",
+  "#6743a5"
 ];
 
 // Função para escolher uma cor aleatória para o background da div de cada tarefa
