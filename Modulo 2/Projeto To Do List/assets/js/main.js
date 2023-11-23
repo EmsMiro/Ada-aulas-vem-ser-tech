@@ -420,3 +420,90 @@ function updateTaskDisplay(filterType) {
   });
 }
 
+// Encontrando o botão de pesquisa no HTML
+const searchButton = document.querySelector("#button-search");
+
+// adicionando um escutador de eventos ao botão de pesquisa
+searchButton.addEventListener("click", searchTasks);
+
+// função para realizar a pesquisa nas tarefas
+function searchTasks() {
+  // Obtendo o valor digitado no input de pesquisa
+  const searchTerm = document.querySelector("#input-search").value.trim();
+
+  // Verificando se o termo de pesquisa não está vazio
+  if (searchTerm !== "") {
+    // Filtrando o array 'tasks' por correspondência exata no título, descrição ou no ID
+    const foundTasks = tasks.filter(
+      (task) =>
+        task.titulo === searchTerm ||
+        task.descricao === searchTerm ||
+        task.id.toString() === searchTerm
+    );
+
+    // Filtrando o array 'deletedTasks' por correspondência exata no título, descrição ou noID
+    const foundDeletedTasks = deletedTasks.filter(
+      (task) =>
+        task.titulo === searchTerm ||
+        task.descricao === searchTerm ||
+        task.id.toString() === searchTerm
+    );
+
+    // removendo todas as tarefas da tela
+    clearTaskDisplay();
+
+    // Se a tarefa for encontrada, exibi-la e adicionar o botão "Voltar para todas as tarefas" na tela
+    if (foundTasks.length > 0 || foundDeletedTasks.length > 0) {
+      const foundTask = foundTasks.length > 0 ? foundTasks[0] : foundDeletedTasks[0];
+      showTask(foundTask);
+
+      // Adicionando o botão "Voltar para todas as tarefas"
+      addBackButton();
+    } else {
+      //  caso nenhuma tarefa for encontrada, exiba uma mensagem
+      alert("Nenhuma tarefa encontrada com o termo de pesquisa.");
+    }
+  } else {
+    // Se o termo de pesquisa estiver vazio, exiba uma mensagem de alerta
+    alert("Por favor, digite um termo de pesquisa.");
+  }
+}
+
+// Função para "remover" todas as tarefas da tela
+function clearTaskDisplay() {
+  const taskListDiv = document.querySelector("#task-list");
+  taskListDiv.innerHTML = ""; // Removendo todo o conteúdo da lista de tarefas
+}
+
+// Função para adicionar o botão "Voltar para todas as tarefas"
+function addBackButton() {
+  const backButtonContainer = document.createElement("div");
+  backButtonContainer.className = "back-button-container"; 
+  backButtonContainer.innerHTML = '<button id="back-to-all-tasks">Voltar para todas as tarefas</button>';
+
+  const taskListDiv = document.querySelector("#task-list");
+  taskListDiv.appendChild(backButtonContainer);
+
+  // adicionando escutador de eventos ao botão "Voltar para todas as tarefas"
+  const backButton = document.querySelector("#back-to-all-tasks");
+  backButton.addEventListener("click", showAllTasks);
+}
+// Função para mostrar todas as tarefas novamente
+function showAllTasks() {
+  // removendo o botão "Voltar para todas as tarefas" da tela
+  const backButtonContainer = document.querySelector(".back-button-container");
+  backButtonContainer.remove();
+
+  // limpando a tela
+  clearTaskDisplay();
+
+  // mostrando todas as tarefas novamente
+  tasks.forEach((task) => {
+    showTask(task);
+  });
+
+  // Adicionando as tarefas excluídas de volta à tela
+  deletedTasks.forEach((deletedTask) => {
+    showTask(deletedTask);
+  });
+}
