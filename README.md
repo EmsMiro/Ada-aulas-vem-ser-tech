@@ -20,6 +20,7 @@ O que você aprendeu construindo esse projeto? Quais desafios você enfrentou e 
 Veja os deploys de alguns desses projetos
 
 https://clandestino-coffee.vercel.app/
+
 https://to-do-list-ems.netlify.app
 
 
