@@ -462,6 +462,8 @@ function searchTasks() {
     } else {
       //  caso nenhuma tarefa for encontrada, exiba uma mensagem
       alert("Nenhuma tarefa encontrada com o termo de pesquisa.");
+      // Adicionando o botão "Voltar para todas as tarefas"
+      addBackButton();
     }
   } else {
     // Se o termo de pesquisa estiver vazio, exiba uma mensagem de alerta

@@ -1,14 +1,13 @@
 @media(max-width:768px) {
     /* Estilos do header*/
     header {
-        flex-direction: row; /* Mantém a direção do flex container como linha */
-        align-items: center; /* Alinha os itens verticalmente no centro */
-        
+        flex-direction: row; 
+        align-items: center;        
       }
     
       .header-title {
-        width: 50%; /* Define a largura do título */
-        margin-right: 20px; /* Adiciona uma margem à direita para criar espaço entre os elementos */
+        width: 50%; 
+        margin-right: 20px;       
       }
     
       .header-icon {
