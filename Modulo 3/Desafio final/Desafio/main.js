@@ -7,6 +7,7 @@ import chalk from "chalk";
 export const entrada = chalk.bgHex('#45C4B0').bold;
 export const saida = chalk.bgHex('#FF6B1A').bold;
 export const exibeInfos = chalk.hex('#0897B4').bold;
+export const exibeValorTotal = chalk.bgHex('#0897B4').bold;
 export const alerta = chalk.bgYellowBright.red;
 export const exibeEstoque = chalk.hex('#9AEBA3');
 export const exibeMovimentacoes = chalk.hex('#FF81D0');
@@ -32,6 +33,10 @@ try {
     // Categoria Camiseta
     const categoriaCamiseta = new Categoria('Camiseta');
     const camisaStreetWear = new Produto('Camiseta Street Wear', 250.00, 420, 'G', categoriaCamiseta);
+    camisaStreetWear.exibeProduto();
+
+    // Adicionando espaçamento
+    console.log('\n');
 
     //Movimentações no Estoque
     const novaMovimentacaoEntrada = new MovimentacaoEstoque(camisaPolo, 50, 'entrada', new Date('2023-10-16').toLocaleDateString('pt-BR'));    
@@ -42,29 +47,32 @@ try {
 
     const novaMovimentacaoEntradaCamisaSocial = new MovimentacaoEstoque(camisaSocial, 120, 'entrada', new Date('2023-12-09').toLocaleDateString('pt-BR'));
     novaMovimentacaoEntradaCamisaSocial.executarMovimentacao();
-
-     // Adicionando espaçamento
-     console.log('\n');
-
+     
     //Adicionando produto ao Estoque
     const meuEstoque = new Estoque();
-    meuEstoque.adicionarProdutoAoEstoque(camisaPolo);
-    meuEstoque.adicionarProdutoAoEstoque(camisaSocial);
-    meuEstoque.adicionarProdutoAoEstoque(camisaStreetWear);
+    meuEstoque.adicionarProdutoAoEstoque(camisaPolo, camisaPolo.getQuantidade(), camisaPolo.getPreco());
+    meuEstoque.adicionarProdutoAoEstoque(camisaSocial, camisaSocial.getQuantidade(), camisaSocial.getPreco());
+    meuEstoque.adicionarProdutoAoEstoque(camisaStreetWear, camisaStreetWear.getQuantidade(), camisaStreetWear.getPreco());
 
      // Adicionando espaçamento
-     console.log('\n');    
+     console.log('\n'); 
+     
+    // Exibir estoque
+    meuEstoque.exibirEstoque();
 
     // Exibindo histórico de movimentações
     meuEstoque.movimentacoesRealizadas(novaMovimentacaoEntrada);    
     meuEstoque.movimentacoesRealizadas(novaMovimentacaoSaida);
     meuEstoque.movimentacoesRealizadas(novaMovimentacaoEntradaCamisaSocial);     
-    
-     // Adicionando espaçamento
-     console.log('\n');
 
     //Exibindo histórico de movimentações por categoria
     meuEstoque.filtrarMovimentacaoPorCategoria('Camisa');
+
+    // Adicionando espaçamento
+    console.log('\n'); 
+
+    //Exibidin valor total do Estoque
+    meuEstoque.calcularValorTotalEstoque();
 
   } catch (error) {
     console.error(error.message);

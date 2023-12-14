@@ -1,4 +1,4 @@
-import { entrada, saida, alerta, exibeEstoque, exibeMovimentacoes } from "./main.js";
+import { entrada, saida, alerta, exibeEstoque, exibeMovimentacoes, exibeValorTotal } from "./main.js";
 
 export class MovimentacaoEstoque {
     constructor(produto, unidades, tipo, data){
@@ -39,9 +39,12 @@ export class MovimentacaoEstoque {
         this.historicoMovimentacoes = [];
     }
 
-    adicionarProdutoAoEstoque(produto){
-        this.estoque.push(produto);
-        console.log(exibeEstoque(`Em Estoque: ${JSON.stringify(this.estoque, null, 2)}`));
+    adicionarProdutoAoEstoque(produto, quantidade, preco){
+        this.estoque.push({produto, quantidade, preco});        
+    }
+
+    exibirEstoque(){
+        console.log(exibeEstoque(`Exibindo itens em Estoque: ${JSON.stringify(this.estoque, null, 2)}`));
     }
 
     movimentacoesRealizadas(movimentacao){
@@ -62,5 +65,23 @@ export class MovimentacaoEstoque {
     
         console.log(`Exibindo movimentações da categoria ${nomeCategoria}: ${JSON.stringify(movimentacaoFiltrada, null, 2)}`);
     }
-    
+
+    calcularValorTotalEstoque(){
+        let quantidadeTotal = 0;
+        let valorTotal = 0;
+
+        this.estoque.forEach(produto =>{
+            const {quantidade, preco} = produto;
+
+            const valorProduto = quantidade * preco;
+
+            quantidadeTotal += quantidade;
+            valorTotal += valorProduto;
+        });
+        const quantidadeTotalFormatada = quantidadeTotal.toLocaleString('pt-BR', { maximumFractionDigits: 0 });
+        const valorTotalFormatado = valorTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        console.log(exibeValorTotal(`Quantidade total de produtos no estoque: ${quantidadeTotalFormatada}`));
+        console.log(exibeValorTotal(`Valor total do estoque: ${(valorTotalFormatado)}`));
+    }    
   }
