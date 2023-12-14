@@ -9,25 +9,62 @@ export const saida = chalk.bgHex('#FF6B1A').bold;
 export const exibeInfos = chalk.hex('#0897B4').bold;
 export const alerta = chalk.bgYellowBright.red;
 export const exibeEstoque = chalk.hex('#9AEBA3');
+export const exibeMovimentacoes = chalk.hex('#FF81D0');
 //  console.log(lucro('Balanço positivo, lucro de R$ 400.00'));
 //   console.log(desfalque('Balanço negativo, prejuízo de R$ 400.00'));
   
 
 try {
+    // Exemplos de uso - Categoria Camisa
     const categoriaCamisa = new Categoria('Camisa');
     const camisaPolo = new Produto('Camisa Polo', 120.00, 200, 'M', categoriaCamisa);
+    const camisaSocial = new Produto('Camisa Social', 280.00, 350, 'G', categoriaCamisa);
     camisaPolo.exibeProduto();
-    const categoriaRegata = new Categoria('Camiseta');
-    const camisaStreetWear = new Produto('Camiseta Street Wear', 250.00, 420, 'G', categoriaRegata);
 
-    const novaMovimentacaoEntrada = new MovimentacaoEstoque(camisaPolo, 50, 'entrada', new Date(2023-10-16));    
+    // Adicionando espaçamento
+    console.log('\n');
+    
+    camisaSocial.exibeProduto();
+
+    // Adicionando espaçamento
+    console.log('\n');
+
+    // Categoria Camiseta
+    const categoriaCamiseta = new Categoria('Camiseta');
+    const camisaStreetWear = new Produto('Camiseta Street Wear', 250.00, 420, 'G', categoriaCamiseta);
+
+    //Movimentações no Estoque
+    const novaMovimentacaoEntrada = new MovimentacaoEstoque(camisaPolo, 50, 'entrada', new Date('2023-10-16').toLocaleDateString('pt-BR'));    
     novaMovimentacaoEntrada.executarMovimentacao();
     
-    const novaMovimentacaoSaida = new MovimentacaoEstoque(camisaStreetWear, 35, 'saída', new Date(2023-12-11));
+    const novaMovimentacaoSaida = new MovimentacaoEstoque(camisaStreetWear, 35, 'saída', new Date('2023-11-20').toLocaleDateString('pt-BR'));
     novaMovimentacaoSaida.executarMovimentacao();
 
+    const novaMovimentacaoEntradaCamisaSocial = new MovimentacaoEstoque(camisaSocial, 120, 'entrada', new Date('2023-12-09').toLocaleDateString('pt-BR'));
+    novaMovimentacaoEntradaCamisaSocial.executarMovimentacao();
+
+     // Adicionando espaçamento
+     console.log('\n');
+
+    //Adicionando produto ao Estoque
     const meuEstoque = new Estoque();
     meuEstoque.adicionarProdutoAoEstoque(camisaPolo);
+    meuEstoque.adicionarProdutoAoEstoque(camisaSocial);
+    meuEstoque.adicionarProdutoAoEstoque(camisaStreetWear);
+
+     // Adicionando espaçamento
+     console.log('\n');    
+
+    // Exibindo histórico de movimentações
+    meuEstoque.movimentacoesRealizadas(novaMovimentacaoEntrada);    
+    meuEstoque.movimentacoesRealizadas(novaMovimentacaoSaida);
+    meuEstoque.movimentacoesRealizadas(novaMovimentacaoEntradaCamisaSocial);     
+    
+     // Adicionando espaçamento
+     console.log('\n');
+
+    //Exibindo histórico de movimentações por categoria
+    meuEstoque.filtrarMovimentacaoPorCategoria('Camisa');
 
   } catch (error) {
     console.error(error.message);

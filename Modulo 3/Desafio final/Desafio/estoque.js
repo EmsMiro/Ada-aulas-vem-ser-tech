@@ -1,4 +1,4 @@
-import { entrada, saida, alerta, exibeEstoque } from "./main.js";
+import { entrada, saida, alerta, exibeEstoque, exibeMovimentacoes } from "./main.js";
 
 export class MovimentacaoEstoque {
     constructor(produto, unidades, tipo, data){
@@ -43,4 +43,24 @@ export class MovimentacaoEstoque {
         this.estoque.push(produto);
         console.log(exibeEstoque(`Em Estoque: ${JSON.stringify(this.estoque, null, 2)}`));
     }
+
+    movimentacoesRealizadas(movimentacao){
+        this.historicoMovimentacoes.push(movimentacao);
+        console.log(exibeMovimentacoes(`Histórico de movimentações realizadas: ${JSON.stringify(this.historicoMovimentacoes, null, 2)} \n`))
+    }   
+    
+    filtrarMovimentacaoPorCategoria(nomeCategoria){
+        const movimentacaoFiltrada = [];
+    
+        for(let i = 0; i < this.historicoMovimentacoes.length; i++){
+            const categoriaMovimentacao = this.historicoMovimentacoes[i].produto.categoria.nome;
+    
+            if(categoriaMovimentacao === nomeCategoria){
+                movimentacaoFiltrada.push(this.historicoMovimentacoes[i]);
+            }
+        }
+    
+        console.log(`Exibindo movimentações da categoria ${nomeCategoria}: ${JSON.stringify(movimentacaoFiltrada, null, 2)}`);
+    }
+    
   }
