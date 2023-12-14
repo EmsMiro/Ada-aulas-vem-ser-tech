@@ -1,4 +1,4 @@
-import { entrada, saida, alerta } from "./main.js";
+import { entrada, saida, alerta, exibeEstoque } from "./main.js";
 
 export class MovimentacaoEstoque {
     constructor(produto, unidades, tipo, data){
@@ -10,7 +10,7 @@ export class MovimentacaoEstoque {
 
     executarMovimentacao() {
         const quantidadeProduto = this.produto.getQuantidade();
-    let quantidadeAtualizada; // Declare a variável aqui
+        let quantidadeAtualizada; 
 
     if (this.tipo === 'entrada') {
         if (this.unidades > 0) {
@@ -34,7 +34,13 @@ export class MovimentacaoEstoque {
   }
   
   export class Estoque {
-    constructor(produtos = []){
-        this.estoque = produtos ;
+    constructor(){
+        this.estoque = [] ;
+        this.historicoMovimentacoes = [];
+    }
+
+    adicionarProdutoAoEstoque(produto){
+        this.estoque.push(produto);
+        console.log(exibeEstoque(`Em Estoque: ${JSON.stringify(this.estoque, null, 2)}`));
     }
   }
