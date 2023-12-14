@@ -11,10 +11,8 @@ export const exibeValorTotal = chalk.bgHex('#0897B4').bold;
 export const alerta = chalk.bgYellowBright.red;
 export const exibeEstoque = chalk.hex('#9AEBA3');
 export const exibeMovimentacoes = chalk.hex('#FF81D0');
-//  console.log(lucro('Balanço positivo, lucro de R$ 400.00'));
-//   console.log(desfalque('Balanço negativo, prejuízo de R$ 400.00'));
-  
 
+// Bloco de código try catch para executar os métodos principais do programa
 try {
     // Exemplos de uso - Categoria Camisa
     const categoriaCamisa = new Categoria('Camisa');
