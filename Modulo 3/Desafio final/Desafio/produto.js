@@ -40,7 +40,8 @@ export class Produto {
     }
 
     exibeProduto(){
-        console.log(exibeInfos( `Produto: ${this.nome}, Preço: R$ ${this.getPreco()},        
+        console.log(exibeInfos( `Exibindo informações do Produto: 
+        ${this.nome}, Preço: R$ ${this.getPreco()},        
         Quantidade: ${this.getQuantidade()}, Categoria: ${this.categoria.nome}, Tamanho: ${this.tamanho}`)       
         ); 
     }
