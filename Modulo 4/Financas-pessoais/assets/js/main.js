@@ -154,7 +154,6 @@ btnAdicionar.addEventListener('click', () => {
 // Carrega a tabela com base nas transações do sessionStorage
 atualizarTabela();
 
-
 //código do verificar se a meta foi alcançada
 const btnVerificarMeta = document.querySelector('.btn-verificar-meta');
 const metaStatus = document.getElementById('meta-status');
@@ -164,15 +163,16 @@ btnVerificarMeta.addEventListener('click', () => {
   verificarMeta();
 });
 
+//obtem os dados de receita e despesas
+const receitas = obterTransacoesDoSessionStorage('receita');
+const despesas = obterTransacoesDoSessionStorage('despesa');
+
+// calcula o total de receitas e despesas
+const totalReceitas = receitas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
+const totalDespesas = despesas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
+
 //  verifica se a meta foi alcançada
 function verificarMeta() {
-  const receitas = obterTransacoesDoSessionStorage('receita');
-  const despesas = obterTransacoesDoSessionStorage('despesa');
-
-  // calcula o total de receitas e despesas
-  const totalReceitas = receitas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
-  const totalDespesas = despesas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
-
   // calcula o saldo (receitas - despesas)
   const saldo = totalReceitas - totalDespesas;
 
@@ -210,4 +210,37 @@ despesaCheckbox.addEventListener('change', function () {
   if (this.checked) {
     receitaCheckbox.checked = false;
   }
+});
+
+// gráfico
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+    labels: ['Receitas', 'Despesas'],
+    datasets: [{
+      data: [totalReceitas, totalDespesas],
+      backgroundColor: ['green', 'red'],
+      hoverOffSet: 4,
+      borderWidth: 1,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    legend: {
+      position: 'right',
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            const value = context.parsed;
+            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+          },
+        },
+      },
+    },
+  },
 });

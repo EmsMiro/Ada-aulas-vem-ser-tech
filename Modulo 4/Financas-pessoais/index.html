@@ -7,6 +7,7 @@
   <title>Minha carteira.com</title>
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="shortcut icon" href="./assets/img/money box favicon.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -46,7 +47,9 @@
       </section>
     </section>
     <section class="chart">
-      <div class="chart-doughnut">espaço reservado para o gráfico da API</div>
+      <div class="chart-doughnut">
+        <canvas id="myChart"></canvas>
+      </div>
       <div class="export">
         <h3>Exportar relatório de finanças</h3>
         <label for="checkbox-pdf">

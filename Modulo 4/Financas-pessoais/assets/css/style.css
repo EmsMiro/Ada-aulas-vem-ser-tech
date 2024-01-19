@@ -8,20 +8,21 @@
   box-sizing: border-box;
 }
 
-body { 
-  background-color: #F7F7F7; 
+body {
+  background-color: #F7F7F7;
   display: flex;
   flex-direction: column;
-  font-family: 'Inter', sans-serif;  
+  font-family: 'Inter', sans-serif;
   min-height: 100vh;
-  margin: 0;  
+  margin: 0;
 }
+
 /*Estilos do header*/
 header {
-  align-items: center;   
+  align-items: center;
   background-color: #D7FF45;
-  border-radius: 5px;  
-  display: flex;   
+  border-radius: 5px;
+  display: flex;
   width: 80%;
   margin: 0 auto;
   padding-left: 20px;
@@ -29,16 +30,16 @@ header {
 
 h1 {
   margin-left: 20px;
-  font-family:'Manrope', sans-serif;
-  font-weight: 400;  
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
 }
 
 /*Estilos do main*/
-main { 
+main {
   margin: 50px 135px;
-  align-items: left; 
-  display: grid;  
-  grid-template-columns: repeat(2, 1fr); 
+  align-items: left;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto;
   row-gap: 20px;
 }
@@ -46,11 +47,11 @@ main {
 /*Estilos das section Meta*/
 .section-meta {
   background-color: #D1D1D1;
-  border-radius: 5px;   
-  width: 400px; 
-  padding: 30px;  
-  height: fit-content;  
-  grid-area: 1 / 1 / 2 / 2;  
+  border-radius: 5px;
+  width: 400px;
+  padding: 30px;
+  height: fit-content;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .btn-definir {
@@ -60,8 +61,8 @@ main {
 /*Estilos das section transações*/
 .adicionar-transacao {
   background-color: #D1D1D1;
-  border-radius: 5px;  
-  margin-top: 40px;  
+  border-radius: 5px;
+  margin-top: 40px;
 }
 
 /*Estilos da label input-value */
@@ -71,7 +72,7 @@ main {
   margin: 10px 0;
 }
 
-#transacaoValor{
+#transacaoValor {
   margin: 5px 0;
 }
 
@@ -87,21 +88,22 @@ main {
 }
 
 /* Remover todos estilos padrão dos inputs e checkbox */
-input, label {
+input,
+label {
   border: none;
-  font-family:'Inter', sans-serif;  
+  font-family: 'Inter', sans-serif;
 }
 
 /* Estilo dos checkbox */
 input[type="checkbox"] {
-  width: 15px; 
-  height: 15px; 
+  width: 15px;
+  height: 15px;
 }
 
 /* Estilo dos inputs */
 input[type="text"] {
-  padding: 5px; 
-  border: 1px solid #ccc; 
+  padding: 5px;
+  border: 1px solid #ccc;
   border-radius: 3px;
 }
 
@@ -109,14 +111,14 @@ input[type="text"] {
 button {
   border: none;
   outline: none;
-  background-color: #1E1E1E; 
-  color: #fff; 
-  padding: 10px 15px; 
-  border-radius: 3px; 
+  background-color: #1E1E1E;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 3px;
   cursor: pointer;
 }
 
-button:hover{
+button:hover {
   background-color: #D7FF45;
   color: #1E1E1E;
 }
@@ -129,8 +131,8 @@ button:hover{
 }
 
 .chart-doughnut {
-  height: 200px;
-  background-color: #ff45e0;   
+  height: 250px;
+  background-color: #D1D1D1;
 }
 
 /*Estilos da div export*/
@@ -143,12 +145,12 @@ button:hover{
   margin-left: 1rem;
   padding: 8px 10px;
 }
-  
+
 
 /*Estilos da section table*/
-.table{  
+.table {
   grid-area: 3 / 2 / 4 / 3;
-  grid-column: 1 / -1; /  
+  grid-column: 1 / -1;/
 }
 
 /* Estilos da tabela */
@@ -158,7 +160,7 @@ table {
   border-collapse: collapse;
   border: none;
   overflow: hidden;
- 
+
 }
 
 thead {
@@ -166,9 +168,10 @@ thead {
   text-transform: uppercase;
 }
 
-th, td {
+th,
+td {
   padding: 1rem;
-  border: 1px solid #b3b3b3;  
+  border: 1px solid #b3b3b3;
 }
 
 tbody {
@@ -182,6 +185,3 @@ tbody {
   align-items: right;
   float: right;
 }
-
-
-
