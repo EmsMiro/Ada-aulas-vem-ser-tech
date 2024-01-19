@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;600;700&family=Manrope:wght@200;400;500;600;700;800&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body { 
+  background-color: #F7F7F7; 
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;  
+  min-height: 100vh;
+  margin: 0;  
+}
+/*Estilos do header*/
+header {
+  align-items: center;   
+  background-color: #D7FF45;
+  border-radius: 5px;  
+  display: flex;   
+  width: 80%;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+h1 {
+  margin-left: 20px;
+  font-family:'Manrope', sans-serif;
+  font-weight: 400;  
+}
+
+/*Estilos do main*/
+main { 
+  margin: 50px 135px;
+  align-items: left; 
+  display: grid;  
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: auto auto;
+  row-gap: 20px;
+}
+
+/*Estilos das section Meta*/
+.meta {
+  background-color: #D1D1D1;
+  border-radius: 5px;   
+  width: 400px; 
+  padding: 30px;  
+  height: fit-content;  
+  grid-area: 1 / 1 / 2 / 2;  
+}
+
+.btn-definir {
+  padding: 6px 10px;
+}
+
+/*Estilos das section transações*/
+.adicionar-transacao {
+  background-color: #D1D1D1;
+  border-radius: 5px;  
+  margin-top: 40px;  
+}
+
+/*Estilos da label input-value */
+.input-value {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+#transacaoValor{
+  margin: 5px 0;
+}
+
+.btn-adicionar {
+  margin: 0 auto;
+  align-items: center;
+  display: block;
+}
+
+/*Estilos do input-descrição*/
+#transacaoDescricao {
+  margin: 5px 0;
+}
+
+/* Remover todos estilos padrão dos inputs e checkbox */
+input, label {
+  border: none;
+  font-family:'Inter', sans-serif;  
+}
+
+/* Estilo dos checkbox */
+input[type="checkbox"] {
+  width: 15px; 
+  height: 15px; 
+}
+
+/* Estilo dos inputs */
+input[type="text"] {
+  padding: 5px; 
+  border: 1px solid #ccc; 
+  border-radius: 3px;
+}
+
+/* Estilo dos botões */
+button {
+  border: none;
+  outline: none;
+  background-color: #1E1E1E; 
+  color: #fff; 
+  padding: 10px 15px; 
+  border-radius: 3px; 
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #D7FF45;
+  color: #1E1E1E;
+}
+
+/*Estilos da section chart*/
+.chart {
+  grid-area: 1 / 2 / 2 / 3;
+  background-color: #D1D1D1;
+  border-radius: 5px;
+}
+
+.chart-doughnut {
+  height: 300px;
+  background-color: #ff45e0;   
+}
+
+/*Estilos da div export*/
+.export {
+  margin-top: 30px;
+  margin-left: 2rem;
+}
+
+.btn-export {
+  margin-left: 1rem;
+  padding: 8px 10px;
+}
+  
+
+/*Estilos da section table*/
+.table{  
+  grid-area: 3 / 2 / 4 / 3;
+  grid-column: 1 / -1; /  
+}
+
+/* Estilos da tabela */
+table {
+  width: 100%;
+  border-radius: 5px;
+  border-collapse: collapse;
+  border: none;
+  overflow: hidden;
+ 
+}
+
+thead {
+  background-color: #D7FF45;
+  text-transform: uppercase;
+}
+
+th, td {
+  padding: 1rem;
+  border: 1px solid #b3b3b3;  
+}
+
+tbody {
+  background-color: #ffffff;
+  color: #1E1E1E;
+}
+
+
+

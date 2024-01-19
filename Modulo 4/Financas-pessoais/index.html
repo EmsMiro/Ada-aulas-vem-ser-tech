@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <header>
+    <img src="./assets/img/Money Box.png" alt="logo">
+    <h1>Minha carteira.com</h1>
+  </header>
+  <main>
+    <section class="meta">
+      <h3>Defina uma meta financeira</h3>
+      <label for="metaInput">Meta:</label>
+      <input type="text" id="metaInput" name="metaInput" placeholder="R$ 0.00">
+      <button class="btn-definir">Definir</button>
+      <section class="adicionar-transacao">
+        <h3>Adicionar transação</h3>
+        <label>
+          <input type="checkbox" id="receitaCheckbox" name="tipoTransacao" value="receita">
+          Receita
+        </label>
+        <label>
+          <input type="checkbox" id="despesaCheckbox" name="tipoTransacao" value="despesa">
+          Despesa
+        </label>
+        <label for="input-value" class="input-value">
+          Valor
+          <input type="text" id="transacaoValor" name="transacaoValor" placeholder="R$ 0.00">
+        </label>
+        <label for="input-description" class="input-description">
+          Descrição
+          <input type="text" size="41" id="transacaoDescricao" name="transacaoDescricao" placeholder="Compras do mês">
+        </label>
+        <button class="btn-adicionar">Adicionar</button>
+      </section>
+    </section>
+    <section class="chart">
+      <div class="chart-doughnut">espaço reservado para o gráfico da API</div>
+      <div class="export">
+        <h3>Exportar relatório de finanças</h3>
+        <label for="checkbox-pdf">
+          <input type="checkbox" name="checkbox-pdf" id="checkbox-pdf">
+          PDF
+        </label>
+        <label for="checkbox-doc">
+          <input type="checkbox" name="checkbox-doc" id="checkbox-doc">
+          DOC
+        </label>
+        <button class="btn-export">
+          Exportar
+        </button>
+      </div>
+    </section>
+    <section class="table">
+      <div class="relative overflow-hidden shadow-md rounded-lg">
+        <table class="table-fixed w-full text-left">
+          <thead>
+            <tr>
+              <td>Tipo da transação</td>
+              <td>Descrição</td>
+              <td>Valor</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Receita</td>
+              <td>Salário</td>
+              <td>R$ 849</td>
+            </tr>
+            <tr>
+              <td>Despesa</td>
+              <td>Compras do mês</td>
+              <td>R$ 600&nbsp;</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>Total +249</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
