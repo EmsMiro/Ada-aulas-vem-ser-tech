@@ -15,11 +15,14 @@
     <h1>Minha carteira.com</h1>
   </header>
   <main>
-    <section class="meta">
-      <h3>Defina uma meta financeira</h3>
+    <section class="section-meta">
+      <div class="div-meta">
+        <h3 id="meta-title">Defina uma meta financeira</h3>
       <label for="metaInput">Meta:</label>
-      <input type="text" id="metaInput" name="metaInput" placeholder="R$ 0.00">
-      <button class="btn-definir">Definir</button>
+      <input type="text" id="metaInput" name="metaInput" placeholder="R$ 0.00" oninput="this.value = this.value.replace(/[^0-9.,]/g, '');">
+      <button class="btn-definir" id="btn-definir">Definir</button>
+      </div>
+      
       <section class="adicionar-transacao">
         <h3>Adicionar transação</h3>
         <label>
@@ -89,6 +92,7 @@
       </div>
     </section>
   </main>
+  <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

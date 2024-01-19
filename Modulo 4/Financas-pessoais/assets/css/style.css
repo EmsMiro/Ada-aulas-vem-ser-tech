@@ -44,7 +44,7 @@ main {
 }
 
 /*Estilos das section Meta*/
-.meta {
+.section-meta {
   background-color: #D1D1D1;
   border-radius: 5px;   
   width: 400px; 
@@ -129,7 +129,7 @@ button:hover{
 }
 
 .chart-doughnut {
-  height: 300px;
+  height: 200px;
   background-color: #ff45e0;   
 }
 
