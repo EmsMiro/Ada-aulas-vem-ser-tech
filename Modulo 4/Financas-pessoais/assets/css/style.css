@@ -176,5 +176,12 @@ tbody {
   color: #1E1E1E;
 }
 
+/*Estilos do btn-verificar-meta*/
+.btn-verificar-meta {
+  margin-top: 10px;
+  align-items: right;
+  float: right;
+}
+
 
 
