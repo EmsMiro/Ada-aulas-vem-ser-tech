@@ -18,11 +18,12 @@
     <section class="section-meta">
       <div class="div-meta">
         <h3 id="meta-title">Defina uma meta financeira</h3>
-      <label for="metaInput">Meta:</label>
-      <input type="text" id="metaInput" name="metaInput" placeholder="R$ 0.00" oninput="this.value = this.value.replace(/[^0-9.,]/g, '');">
-      <button class="btn-definir" id="btn-definir">Definir</button>
+        <label for="metaInput">Meta:</label>
+        <input type="text" id="metaInput" name="metaInput" placeholder="R$ 0.00"
+          oninput="this.value = this.value.replace(/[^0-9.,]/g, '');">
+        <button class="btn-definir" id="btn-definir">Definir</button>
       </div>
-      
+
       <section class="adicionar-transacao">
         <h3>Adicionar transação</h3>
         <label>
@@ -72,27 +73,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Receita</td>
-              <td>Salário</td>
-              <td>R$ 849</td>
-            </tr>
-            <tr>
-              <td>Despesa</td>
-              <td>Compras do mês</td>
-              <td>R$ 600&nbsp;</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td>Total +249</td>
-            </tr>
+            <!-- Inserido com JS -->
           </tbody>
         </table>
       </div>
       <button class="btn-verificar-meta">Verificar Meta</button>
       <p id="meta-status"></p>
-    </section>   
+    </section>
   </main>
   <script src="./assets/js/main.js"></script>
 </body>

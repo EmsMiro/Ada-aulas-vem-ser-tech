@@ -2,6 +2,7 @@ const button = document.querySelector('#btn-definir');
 const metaTitle = document.querySelector('#meta-title');
 const metaSection = document.querySelector('.section-meta');
 
+
 // Função para obter a meta do sessionStorage
 function obterMetaDoSessionStorage() {
   return sessionStorage.getItem('metaFinanceira') || '';
@@ -21,7 +22,11 @@ function atualizarDivMetaComSessionStorage() {
     divMeta.innerHTML = '';
 
     const valorElemento = document.createElement('h3');
-    valorElemento.innerText = `Meta definida: R$ ${metaDoSessionStorage}`;
+    const valorFormatado = new Intl.NumberFormat('pt-br', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(metaDoSessionStorage);
+    valorElemento.innerText = `Meta definida: ${valorFormatado}`;
 
     divMeta.appendChild(valorElemento);
   }
@@ -95,23 +100,35 @@ function atualizarTabela() {
   // adiciona as receitas na tabela
   receitas.forEach(transacao => {
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>Receita</td><td>${transacao.descricao}</td><td>R$ ${transacao.valor}</td>`;
+    const valorFormatado = new Intl.NumberFormat('pt-br', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(transacao.valor);
+    tr.innerHTML = `<td>Receita</td><td>${transacao.descricao}</td><td>${valorFormatado}</td>`;
     tabelaBody.appendChild(tr);
   });
 
-  // diciona as despesas na tabela
+  // adiciona as despesas na tabela
   despesas.forEach(transacao => {
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>Despesa</td><td>${transacao.descricao}</td><td>R$ ${transacao.valor}</td>`;
+    const valorFormatado = new Intl.NumberFormat('pt-br', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(transacao.valor);
+    tr.innerHTML = `<td>Despesa</td><td>${transacao.descricao}</td><td>${valorFormatado}</td>`;
     tabelaBody.appendChild(tr);
   });
 
   // calcula e exibe o total
   const total = receitas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0) -
-                despesas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
-  
+    despesas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
+
   const trTotal = document.createElement('tr');
-  trTotal.innerHTML = `<td></td><td></td><td>Total: ${total.toFixed(2)}</td>`;
+  const valorFormatado = new Intl.NumberFormat('pt-br', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(total);
+  trTotal.innerHTML = `<td></td><td></td><td>Total: ${valorFormatado}</td>`;
   tabelaBody.appendChild(trTotal);
 }
 
@@ -181,3 +198,16 @@ function mostrarMensagemMetaNaoAlcancada() {
   metaStatus.innerText = 'Meta financeira não alcançada.';
   metaStatus.style.color = 'red';
 }
+
+// impedir que receita e despesa sejam checkadas ao mesmo tempo
+receitaCheckbox.addEventListener('change', function () {
+  if (this.checked) {
+    despesaCheckbox.checked = false;
+  }
+});
+
+despesaCheckbox.addEventListener('change', function () {
+  if (this.checked) {
+    receitaCheckbox.checked = false;
+  }
+});
