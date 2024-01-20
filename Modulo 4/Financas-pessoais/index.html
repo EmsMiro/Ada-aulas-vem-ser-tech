@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <!-- Projeto realizado em parceria das alunas Emily Miro e Elaine Stefani Santin -->
-  
+<!-- Projeto realizado em parceria das alunas Emily Miro e Elaine Stefani Santin -->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minha carteira.com</title>
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="shortcut icon" href="./assets/img/money box favicon.png" type="image/x-icon">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 
 <body>
   <header>
@@ -50,14 +48,14 @@
     </section>
     <section class="chart">
       <div class="chart-doughnut">
-        <canvas id="myChart"></canvas>
+        <canvas id="doughnutChart"></canvas>
       </div>
       <div class="export">
         <h3>Exportar relatório de finanças</h3>
         <label for="checkbox-pdf">
           <input type="checkbox" name="checkbox-pdf" id="checkbox-pdf">
           PDF
-        </label>        
+        </label>
         <button class="btn-export">
           Exportar
         </button>
@@ -82,6 +80,9 @@
       <p id="meta-status"></p>
     </section>
   </main>
+  <!--script da API chart.js-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+
   <script src="./assets/js/main.js"></script>
 </body>
 
