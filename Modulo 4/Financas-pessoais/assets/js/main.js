@@ -1,7 +1,8 @@
+// Projeto realizado em parceria das alunas Emily Miro e Elaine Stefani Santin
+
 const button = document.querySelector('#btn-definir');
 const metaTitle = document.querySelector('#meta-title');
 const metaSection = document.querySelector('.section-meta');
-
 
 // Função para obter a meta do sessionStorage
 function obterMetaDoSessionStorage() {
