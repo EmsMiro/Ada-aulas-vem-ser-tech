@@ -131,6 +131,46 @@ function atualizarTabela() {
   }).format(total);
   trTotal.innerHTML = `<td></td><td></td><td>Total: ${valorFormatado}</td>`;
   tabelaBody.appendChild(trTotal);
+
+  // chamando a função para criar o gráfico quando carregar a página
+criarGraficoDoughnut();
+}
+
+// função para criar um gráfico do tipo doughnut
+function criarGraficoDoughnut() {
+  const canvas = document.getElementById('doughnutChart');
+  const ctx = canvas.getContext('2d');
+
+  // verifica se o gráfico já existe e destroi ele para gerar o novo
+  if (window.myDoughnutChart) {
+    window.myDoughnutChart.destroy();
+  }
+
+  const receitas = obterTransacoesDoSessionStorage('receita');
+  const despesas = obterTransacoesDoSessionStorage('despesa');
+
+  const totalReceitas = receitas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
+  const totalDespesas = despesas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
+
+  const saldo = totalReceitas - totalDespesas;
+
+  const data = {
+    labels: ['Receitas', 'Despesas'],
+    datasets: [{
+      data: [totalReceitas, totalDespesas],
+      backgroundColor: ['#1AC5BB', '#EB7F8E'],
+    }],
+  };
+
+  const options = {
+    cutout: '50%', 
+  };
+
+  window.myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: data,
+    options: options,
+  });
 }
 
 // adiciona um evento de clique no btn-adicionar
@@ -213,35 +253,5 @@ despesaCheckbox.addEventListener('change', function () {
   }
 });
 
-// gráfico
-const ctx = document.getElementById('myChart');
+// Código da API - exportação do pdf
 
-new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-    labels: ['Receitas', 'Despesas'],
-    datasets: [{
-      data: [totalReceitas, totalDespesas],
-      backgroundColor: ['green', 'red'],
-      hoverOffSet: 4,
-      borderWidth: 1,
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    legend: {
-      position: 'right',
-    },
-    plugins: {
-      tooltip: {
-        callbacks: {
-          label: function (context) {
-            const value = context.parsed;
-            return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
-          },
-        },
-      },
-    },
-  },
-});
