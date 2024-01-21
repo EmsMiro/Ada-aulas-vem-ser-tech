@@ -1,31 +1,31 @@
 // Projeto realizado em parceria das alunas Emily Miro e Elaine Stefani Santin
 
-const button = document.querySelector('#btn-definir');
-const metaTitle = document.querySelector('#meta-title');
-const metaSection = document.querySelector('.section-meta');
+const button = document.querySelector("#btn-definir");
+const metaTitle = document.querySelector("#meta-title");
+const metaSection = document.querySelector(".section-meta");
 
 // Função para obter a meta do sessionStorage
 function obterMetaDoSessionStorage() {
-  return sessionStorage.getItem('metaFinanceira') || '';
+  return sessionStorage.getItem("metaFinanceira") || "";
 }
 
 //definir a meta no sessionStorage
 function definirMetaNoSessionStorage(valor) {
-  sessionStorage.setItem('metaFinanceira', valor);
+  sessionStorage.setItem("metaFinanceira", valor);
 }
 
 // atualizar o conteúdo da div-meta com base no valor do sessionStorage
 function atualizarDivMetaComSessionStorage() {
-  const divMeta = metaSection.querySelector('.div-meta');
+  const divMeta = metaSection.querySelector(".div-meta");
   const metaDoSessionStorage = obterMetaDoSessionStorage();
 
   if (divMeta !== null) {
-    divMeta.innerHTML = '';
+    divMeta.innerHTML = "";
 
-    const valorElemento = document.createElement('h3');
-    const valorFormatado = new Intl.NumberFormat('pt-br', {
-      style: 'currency',
-      currency: 'BRL'
+    const valorElemento = document.createElement("h3");
+    const valorFormatado = new Intl.NumberFormat("pt-br", {
+      style: "currency",
+      currency: "BRL",
     }).format(metaDoSessionStorage);
     valorElemento.innerText = `Meta definida: ${valorFormatado}`;
 
@@ -33,26 +33,25 @@ function atualizarDivMetaComSessionStorage() {
   }
 }
 
-button.addEventListener('click', () => {
+button.addEventListener("click", () => {
   try {
-    const inputMetaValue = document.querySelector('#metaInput').value;
+    const inputMetaValue = document.querySelector("#metaInput").value;
 
-    if (inputMetaValue.trim() === '') {
-      throw new Error('O campo não pode estar em branco.');
+    if (inputMetaValue.trim() === "") {
+      throw new Error("O campo não pode estar em branco.");
     }
 
     const valorNumerico = parseFloat(inputMetaValue);
 
     if (isNaN(valorNumerico) || valorNumerico <= 0) {
-      throw new Error('Insira um valor diferente de zero.');
+      throw new Error("Insira um valor diferente de zero.");
     }
 
     // manda a meta no sessionStorage
     definirMetaNoSessionStorage(valorNumerico);
 
-    // Atualizando a div-meta com o valor do sessionStorage
+    // atualiza a div-meta com o valor do sessionStorage
     atualizarDivMetaComSessionStorage();
-
   } catch (error) {
     alert(error.message);
   }
@@ -60,13 +59,15 @@ button.addEventListener('click', () => {
 
 /*Código para adicionar a transação na tabela e salvar no session storage*/
 
-const adicionarTransacaoSection = document.querySelector('.adicionar-transacao');
-const tabelaSection = document.querySelector('.table');
-const receitaCheckbox = document.getElementById('receitaCheckbox');
-const despesaCheckbox = document.getElementById('despesaCheckbox');
-const transacaoValorInput = document.getElementById('transacaoValor');
-const transacaoDescricaoInput = document.getElementById('transacaoDescricao');
-const btnAdicionar = document.querySelector('.btn-adicionar');
+const adicionarTransacaoSection = document.querySelector(
+  ".adicionar-transacao"
+);
+const tabelaSection = document.querySelector(".table");
+const receitaCheckbox = document.getElementById("receitaCheckbox");
+const despesaCheckbox = document.getElementById("despesaCheckbox");
+const transacaoValorInput = document.getElementById("transacaoValor");
+const transacaoDescricaoInput = document.getElementById("transacaoDescricao");
+const btnAdicionar = document.querySelector(".btn-adicionar");
 
 // obter as transações do session storage
 function obterTransacoesDoSessionStorage(tipo) {
@@ -90,105 +91,134 @@ function adicionarTransacao(tipo, valor, descricao) {
 
 //  atualizar a tabela com base nas transações
 function atualizarTabela() {
-  const tabelaBody = tabelaSection.querySelector('tbody');
+  const tabelaBody = tabelaSection.querySelector("tbody");
 
   // Limpando a tabela antes de atualizar
-  tabelaBody.innerHTML = '';
+  tabelaBody.innerHTML = "";
 
-  const receitas = obterTransacoesDoSessionStorage('receita');
-  const despesas = obterTransacoesDoSessionStorage('despesa');
+  const receitas = obterTransacoesDoSessionStorage("receita");
+  const despesas = obterTransacoesDoSessionStorage("despesa");
 
   // adiciona as receitas na tabela
-  receitas.forEach(transacao => {
-    const tr = document.createElement('tr');
-    const valorFormatado = new Intl.NumberFormat('pt-br', {
-      style: 'currency',
-      currency: 'BRL'
+  receitas.forEach((transacao) => {
+    const tr = document.createElement("tr");
+    const valorFormatado = new Intl.NumberFormat("pt-br", {
+      style: "currency",
+      currency: "BRL",
     }).format(transacao.valor);
     tr.innerHTML = `<td>Receita</td><td>${transacao.descricao}</td><td>${valorFormatado}</td>`;
     tabelaBody.appendChild(tr);
   });
 
   // adiciona as despesas na tabela
-  despesas.forEach(transacao => {
-    const tr = document.createElement('tr');
-    const valorFormatado = new Intl.NumberFormat('pt-br', {
-      style: 'currency',
-      currency: 'BRL'
+  despesas.forEach((transacao) => {
+    const tr = document.createElement("tr");
+    const valorFormatado = new Intl.NumberFormat("pt-br", {
+      style: "currency",
+      currency: "BRL",
     }).format(transacao.valor);
     tr.innerHTML = `<td>Despesa</td><td>${transacao.descricao}</td><td>${valorFormatado}</td>`;
     tabelaBody.appendChild(tr);
   });
 
   // calcula e exibe o total
-  const total = receitas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0) -
+  const total =
+    receitas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0) -
     despesas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
 
-  const trTotal = document.createElement('tr');
-  const valorFormatado = new Intl.NumberFormat('pt-br', {
-    style: 'currency',
-    currency: 'BRL'
+  const trTotal = document.createElement("tr");
+  const valorFormatado = new Intl.NumberFormat("pt-br", {
+    style: "currency",
+    currency: "BRL",
   }).format(total);
   trTotal.innerHTML = `<td></td><td></td><td>Total: ${valorFormatado}</td>`;
   tabelaBody.appendChild(trTotal);
 
   // chamando a função para criar o gráfico quando carregar a página
-criarGraficoDoughnut();
+  criarGraficoDoughnut();
 }
 
 // função para criar um gráfico do tipo doughnut
 function criarGraficoDoughnut() {
-  const canvas = document.getElementById('doughnutChart');
-  const ctx = canvas.getContext('2d');
+  const canvas = document.getElementById("doughnutChart");
+  const ctx = canvas.getContext("2d");
 
   // verifica se o gráfico já existe e destroi ele para gerar o novo
   if (window.myDoughnutChart) {
     window.myDoughnutChart.destroy();
   }
 
-  const receitas = obterTransacoesDoSessionStorage('receita');
-  const despesas = obterTransacoesDoSessionStorage('despesa');
+  const receitas = obterTransacoesDoSessionStorage("receita");
+  const despesas = obterTransacoesDoSessionStorage("despesa");
 
-  const totalReceitas = receitas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
-  const totalDespesas = despesas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
+  const totalReceitas = receitas.reduce(
+    (acc, transacao) => acc + parseFloat(transacao.valor),
+    0
+  );
+  const totalDespesas = despesas.reduce(
+    (acc, transacao) => acc + parseFloat(transacao.valor),
+    0
+  );
 
   const saldo = totalReceitas - totalDespesas;
 
   const data = {
-    labels: ['Receitas', 'Despesas'],
-    datasets: [{
-      data: [totalReceitas, totalDespesas],
-      backgroundColor: ['#1AC5BB', '#EB7F8E'],
-    }],
+    labels: ["Receitas", "Despesas"],
+    datasets: [
+      {
+        data: [totalReceitas, totalDespesas],
+        backgroundColor: ["#1AC5BB", "#EB7F8E"],
+      },
+    ],
   };
 
   const options = {
-    cutout: '50%', 
+    cutout: "50%",
+  };
+
+  const bgColor = {
+    id: "bgColor",
+    beforeDraw: (chart) => {
+      const { ctx, width, height } = chart;
+      ctx.fillStyle = "#D1D1D1";
+      ctx.fillRect(0, 0, width, height);
+      ctx.restore();
+    },
   };
 
   window.myDoughnutChart = new Chart(ctx, {
-    type: 'doughnut',
+    type: "doughnut",
     data: data,
     options: options,
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+    plugins: [bgColor],
   });
 }
 
 // adiciona um evento de clique no btn-adicionar
-btnAdicionar.addEventListener('click', () => {
-  const tipo = receitaCheckbox.checked ? 'receita' : (despesaCheckbox.checked ? 'despesa' : null);
+btnAdicionar.addEventListener("click", () => {
+  const tipo = receitaCheckbox.checked
+    ? "receita"
+    : despesaCheckbox.checked
+    ? "despesa"
+    : null;
 
   if (tipo !== null) {
     const valor = transacaoValorInput.value;
     const descricao = transacaoDescricaoInput.value;
 
-    if (valor.trim() !== '' && descricao.trim() !== '') {
+    if (valor.trim() !== "" && descricao.trim() !== "") {
       adicionarTransacao(tipo, valor, descricao);
       atualizarTabela();
     } else {
-      alert('Preencha todos os campos.');
+      alert("Preencha todos os campos.");
     }
   } else {
-    alert('Selecione o tipo da transação.');
+    alert("Selecione o tipo da transação.");
   }
 });
 
@@ -196,21 +226,27 @@ btnAdicionar.addEventListener('click', () => {
 atualizarTabela();
 
 //código do verificar se a meta foi alcançada
-const btnVerificarMeta = document.querySelector('.btn-verificar-meta');
-const metaStatus = document.getElementById('meta-status');
+const btnVerificarMeta = document.querySelector(".btn-verificar-meta");
+const metaStatus = document.getElementById("meta-status");
 
 // Adicionando um event listener no botão "Verificar Meta"
-btnVerificarMeta.addEventListener('click', () => {
+btnVerificarMeta.addEventListener("click", () => {
   verificarMeta();
 });
 
 //obtem os dados de receita e despesas
-const receitas = obterTransacoesDoSessionStorage('receita');
-const despesas = obterTransacoesDoSessionStorage('despesa');
+const receitas = obterTransacoesDoSessionStorage("receita");
+const despesas = obterTransacoesDoSessionStorage("despesa");
 
 // calcula o total de receitas e despesas
-const totalReceitas = receitas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
-const totalDespesas = despesas.reduce((acc, transacao) => acc + parseFloat(transacao.valor), 0);
+const totalReceitas = receitas.reduce(
+  (acc, transacao) => acc + parseFloat(transacao.valor),
+  0
+);
+const totalDespesas = despesas.reduce(
+  (acc, transacao) => acc + parseFloat(transacao.valor),
+  0
+);
 
 //  verifica se a meta foi alcançada
 function verificarMeta() {
@@ -218,7 +254,8 @@ function verificarMeta() {
   const saldo = totalReceitas - totalDespesas;
 
   // trás a meta do sessionStorage
-  const metaDoSessionStorage = parseFloat(sessionStorage.getItem('metaFinanceira')) || 0;
+  const metaDoSessionStorage =
+    parseFloat(sessionStorage.getItem("metaFinanceira")) || 0;
 
   // berificando se o saldo é maior ou igual à meta
   if (saldo >= metaDoSessionStorage) {
@@ -230,28 +267,72 @@ function verificarMeta() {
 
 //  mostrar mensagem quando a meta é alcançada
 function mostrarMensagemMetaAlcancada() {
-  metaStatus.innerText = 'Meta financeira alcançada!';
-  metaStatus.style.color = 'green';
+  metaStatus.innerText = "Meta financeira alcançada!";
+  metaStatus.style.color = "green";
 }
 
 // mostrar mensagem quando a meta não é alcançada
 function mostrarMensagemMetaNaoAlcancada() {
-  metaStatus.innerText = 'Meta financeira não alcançada.';
-  metaStatus.style.color = 'red';
+  metaStatus.innerText = "Meta financeira não alcançada.";
+  metaStatus.style.color = "red";
 }
 
 // impedir que receita e despesa sejam checkadas ao mesmo tempo
-receitaCheckbox.addEventListener('change', function () {
+receitaCheckbox.addEventListener("change", function () {
   if (this.checked) {
     despesaCheckbox.checked = false;
   }
 });
 
-despesaCheckbox.addEventListener('change', function () {
+despesaCheckbox.addEventListener("change", function () {
   if (this.checked) {
     receitaCheckbox.checked = false;
   }
 });
 
-// Código da API - exportação do pdf
+// Código da API jsPDF para a função de exportar
 
+const btnExportar = document.querySelector(".btn-export");
+btnExportar.addEventListener("click", async () => {
+  // Verifica se há transações na tabela
+  const receitas = obterTransacoesDoSessionStorage("receita");
+  const despesas = obterTransacoesDoSessionStorage("despesa");
+  if (receitas.length === 0 && despesas.length === 0) {
+    alert(
+      "Você precisa adicionar receitas e despesas antes de exportar o relatório."
+    );
+    return;
+  }
+
+  // Cria um novo documento jsPDF
+  let pdf = new jsPDF();
+  pdf.setFontSize(20);
+
+  // adicionando o título ao PDF
+  pdf.text("Relatório de Finanças - Minha carteira.com", 15, 15);
+
+  // adicionando a tabela ao PDF
+  const tabelaBody = document.querySelector(".table tbody");
+  const tabelaImage = await html2canvas(tabelaBody);
+  pdf.addImage(
+    tabelaImage.toDataURL("image/jpeg", 1.0),
+    "JPEG", 15, 30, 180, 90);
+
+  // adicionando um pequeno espaço abaixo da tabela
+  let posY = 150;
+
+  // aloca o gráfico ao PDF abaixo da tabela
+  const canvas = document.getElementById("doughnutChart");
+  const canvasImage = canvas.toDataURL("image/jpeg", 1.0);
+  pdf.addImage(canvasImage, "JPEG", 15, posY, 80, 80);
+
+  // setando tamanho da fonte da meta
+  pdf.setFontSize(16);
+
+  // adicionando mensagem de status da meta ao PDF
+  const metaStatusText = document.getElementById("meta-status").innerText;
+  pdf.text(metaStatusText, 20, posY + 100); // Ajuste conforme necessário
+
+  // Salva o PDF
+  pdf.save("relatorio_financeiro.pdf");
+});
