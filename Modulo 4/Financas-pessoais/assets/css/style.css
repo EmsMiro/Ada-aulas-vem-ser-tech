@@ -131,8 +131,11 @@ button:hover {
 }
 
 .chart-doughnut {
-  height: 250px;
-  background-color: #D1D1D1;
+  height: 250px;  
+}
+
+#doughnutChart{
+  margin: 0 auto;
 }
 
 /*Estilos da div export*/
