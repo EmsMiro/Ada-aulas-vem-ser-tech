@@ -174,6 +174,24 @@ function criarGraficoDoughnut() {
 
   const options = {
     cutout: "50%",
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            const label = context.dataset.label || "";
+            const value = context.parsed;
+
+            // Adiciona a formatação monetária ao valor antes de exibi-lo
+            const formattedValue = new Intl.NumberFormat("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            }).format(value);
+
+            return `${label}: ${formattedValue}`;
+          },
+        },
+      },
+    },
   };
 
   const bgColor = {
@@ -204,8 +222,8 @@ btnAdicionar.addEventListener("click", () => {
   const tipo = receitaCheckbox.checked
     ? "receita"
     : despesaCheckbox.checked
-    ? "despesa"
-    : null;
+      ? "despesa"
+      : null;
 
   if (tipo !== null) {
     const valor = transacaoValorInput.value;
