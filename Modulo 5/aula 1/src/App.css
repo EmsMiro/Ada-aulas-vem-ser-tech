@@ -1,7 +1,53 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  width: 100%;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* margin-top: 3rem; */
+  background-color: #080204;
+  height: 15vh;
+}
+
+nav {
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin: 0 2rem;
+  cursor: pointer;
+  color: #f0efef;
+  font-size: 18px;
+}
+
+li:hover {
+  color: #238165;
+}
+
+h1 {
+  font-size: 62px;
+  margin-top: 5rem;
+  color: azure;
+}
+
+section {
+  background-image: url('./assets/img/top-view-vinyl-record-arrangement.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  width: 100vw;
+}
