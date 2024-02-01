@@ -8,6 +8,8 @@ body, html {
   padding: 0;
 }
 
+/*Estilo do Header*/
+
 header {
   display: flex;
   justify-content: space-evenly;
@@ -32,22 +34,56 @@ li {
   cursor: pointer;
   color: #f0efef;
   font-size: 18px;
+  border-bottom: 5px solid transparent; 
+  transition: background-color 0.8s ease-in-out; 
 }
 
-li:hover {
-  color: #238165;
+li:hover {  
+  border-bottom: 1px solid #1a6e55;
 }
 
-h1 {
-  font-size: 62px;
-  margin-top: 5rem;
-  color: azure;
-}
+/*Estilos da Section Home*/
 
-section {
+.home {
   background-image: url('./assets/img/top-view-vinyl-record-arrangement.jpg');
   background-size: cover;
   background-position: center;
   height: 80vh;
   width: 100vw;
+}
+h1 {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 62px;
+  margin-top: 5rem;
+  color: #f0ffff;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: #f0efef;
+  margin-bottom: 5rem;
+}
+
+
+/* SearchBar.css */
+label {
+  display: flex;  
+  justify-content: center;
+  margin-left: 5rem;
+  margin-top: 1rem;
+}
+
+input {
+  padding: 8px;
+  border:none;
+  border-radius: 4px;
+  margin-right: 8px;
+  outline: none;
+  width: 400px;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;  
 }
