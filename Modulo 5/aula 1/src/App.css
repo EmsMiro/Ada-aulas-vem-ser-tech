@@ -42,6 +42,18 @@ li:hover {
   border-bottom: 1px solid #1a6e55;
 }
 
+/*Estilo da animação da nav-categories*/
+.categories-nav li {
+  transition: transform 0.3s ease, z-index 0.3s ease;
+  position: relative;
+  border-bottom: none;
+}
+
+.categories-nav li:hover {
+  transform: translateY(-10px); 
+  z-index: 1; 
+}
+
 /*tooltip do icon-cart do nav-home*/
 .tooltip {
   position: relative;

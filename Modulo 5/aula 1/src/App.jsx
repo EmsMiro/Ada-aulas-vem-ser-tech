@@ -16,12 +16,12 @@ function App() {
         </header>
         <h1>Radiola</h1>
         <h3>A sua lojinha na web dos clássicos do passado</h3>
-        <Categories />
+        <div className="categories-nav">
+          <Categories />
+        </div>
         <SearchBar />
       </section>
-      <section className="products">
-        
-      </section>
+      <section className="products"></section>
     </main>
   );
 }
