@@ -4,6 +4,8 @@ import Logo from "./assets/logo";
 import Categories from "./assets/categories";
 import SearchBar from "./assets/search-bar";
 import CartLogo from "./assets/cart-logo";
+import AsideSection from "./assets/aside-section";
+import OfferProducts from "./offer-products";
 
 function App() {
   return (
@@ -21,7 +23,18 @@ function App() {
         </div>
         <SearchBar />
       </section>
-      <section className="products"></section>
+      
+      <div className="two-sections-container">
+      <section className="Aside">
+      <AsideSection />
+      </section>
+
+      <section className="products">
+        <h2 className="title-section-products">Ofertas</h2>
+        <OfferProducts />               
+      </section>
+      </div>
+     
     </main>
   );
 }

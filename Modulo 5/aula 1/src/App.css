@@ -15,7 +15,7 @@ header {
   justify-content: space-evenly;
   align-items: center;
   /* margin-top: 3rem; */
-  background-color: #080204;
+  background-color:#080204;
   height: 15vh;
 }
 
@@ -127,3 +127,76 @@ img {
   height: 40px;
   cursor: pointer;  
 }
+
+/*Estilos do Aside*/
+.aside-title {
+  color: #080204;
+  margin-top: 3rem;
+}
+
+.aside-image {
+  width: 100px;
+  height: 100px;
+}
+
+.right-block {
+  width: 272px;
+  flex-direction: column;
+  text-align: left;
+  margin: 3rem 3rem;
+}
+
+.header-small-news {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.line {
+ border-bottom: 4px solid #d55e22;
+ width: 66px; 
+ margin-top: 14px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+.card-right {
+  display: flex; 
+}
+
+.card-right:nth-child(n) {
+  margin-bottom: 22px;
+}
+
+.card-right:last-child {
+  margin-bottom: 0px;
+}
+
+.card-name-right {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 6px;
+}
+
+.photo_news-right img {
+  box-sizing: border-box;
+  margin-right: 18px;
+  width: 70px;
+  height: 70px;
+}
+
+.card-date-right {
+  color: #888888;
+  font-size: 12px;
+}
+
+.two-sections-container {
+  display: flex;
+}
+
+
+
