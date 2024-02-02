@@ -42,6 +42,34 @@ li:hover {
   border-bottom: 1px solid #1a6e55;
 }
 
+/*tooltip do icon-cart do nav-home*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #1a6e55;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 125%; 
+  left: 50%;
+  margin-left: -60px; 
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 /*Estilos da Section Home*/
 
 .home {
@@ -51,6 +79,7 @@ li:hover {
   height: 80vh;
   width: 100vw;
 }
+
 h1 {
   font-family: 'Audiowide', sans-serif;
   font-size: 62px;
@@ -63,7 +92,6 @@ h3 {
   color: #f0efef;
   margin-bottom: 5rem;
 }
-
 
 /* SearchBar.css */
 label {
