@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap');
+
+/*Estilos do Header*/
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;   
+}
+
+.header-title {
+    font-size: 32px;
+    font-family: 'Fira Code', monospace;
+    margin: 0;   
+    font-weight: inherit;
+    text-transform: capitalize;     
+}

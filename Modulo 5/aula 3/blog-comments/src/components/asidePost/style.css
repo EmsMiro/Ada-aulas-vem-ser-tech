@@ -1,0 +1,114 @@
+.aside-container {
+    width: 20vw;
+    border: 1px solid #000;
+    border-radius: 15px;
+    height: fit-content;
+    margin-top: 1.5rem;
+    box-shadow: 1px 1px 1px #000;
+    transition: all 0.3s ease-in-out;
+    padding: 1rem;
+}
+
+.aside-container:hover {
+    box-shadow: 10px 10px 1px #000;
+}
+
+.aside-container .aside-title {
+    text-align: center;
+    margin-left: 5px;
+}
+
+.aside-itens {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-follow {
+    appearance: none;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+    margin-top: 0;
+    width: 10rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-follow:hover {
+    background-color: #af8613;
+}
+
+#person-icon {
+    margin-bottom: 3rem;
+}
+
+.aside-icons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    padding-right: 10px;
+}
+
+.aside-list li {
+    position: relative;
+    text-align: left;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.aside-list li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #333;
+    transition: width 0.3s ease;
+}
+
+.aside-list li:hover::after {
+    width: 90%;
+}
+
+.aside-list li::before {
+
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    animation: slideIn 0.3s forwards;
+    transition: left 0.3s ease;
+}
+
+.aside-list li:hover::before {
+    left: 0;
+}
+
+@keyframes slideIn {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+hr {
+    height: 1px;
+    width: 80%;
+    border: none;
+    background-color: #000;
+    margin: 10px auto;
+}
