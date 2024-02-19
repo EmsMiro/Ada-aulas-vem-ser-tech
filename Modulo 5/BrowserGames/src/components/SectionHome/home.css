@@ -1,0 +1,38 @@
+.home {
+    background-image: url('https://wallpaperbat.com/img/481950-xbox-game-studio.jpg');
+    background-size: cover;
+    background-color: #00000080;
+    background-blend-mode: darken;
+    width: 100%;
+    height: 80vh;
+    margin: 0;    
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px; 
+    font-size: 40px; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    height: 100vh;     
+}
+
+/*Estilos do h1*/
+h1 {
+    font-family: "Avenir-Black";
+    color: #BDFE2E;
+    background-color: rgba(0, 0, 0, 0.712);
+    width: fit-content;
+}
+
+.subtitle-container {
+    color: #fff;
+    display: flex;    
+}
+
+.subtitle {
+    font-size: 30px;
+    font-weight:400;    
+}

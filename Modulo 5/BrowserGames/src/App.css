@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://db.onlinewebfonts.com/c/b78d933f8aa6b9284c1d3efd3db0a9b9?family=Avenir-Black');
+
+body {
+font-family: "Roboto Mono", monospace;
+margin: 0;
+padding: 0;
+background-color: #000103e7;
+}
+
+/* Reset CSS básico para limpar os estilos padrão dos navegadores */
+
+/* Corrige as margens e preenchimentos */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Define a borda de todos os elementos para serem zero */
+body, input, textarea, select, button {
+    border: 0;
+}
+
+/* Adiciona estilos padrão para elementos de lista */
+ul, ol {
+    list-style: none; 
+}
+
+/* Remove decoração de texto padrão para links */
+a {
+    text-decoration: none;
+}
+
+/* Define o estilo de cursor padrão para links */
+a:hover {
+    cursor: pointer;
+}
+
+/* Define uma largura máxima para elementos de imagem para garantir que não quebrem o layout */
+img {
+    max-width: 100%;
+    height: auto; /* Mantém a proporção de aspecto da imagem */
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
