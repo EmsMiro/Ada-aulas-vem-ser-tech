@@ -47,8 +47,3 @@ section {
     padding: 0;
 }
 
-main {
-    display: flex;    
-    margin-top: 3rem;
-    max-width: 1140px;
-}
