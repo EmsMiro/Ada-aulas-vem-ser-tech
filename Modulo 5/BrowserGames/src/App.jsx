@@ -1,18 +1,14 @@
 import "../src/App.css";
 import Header from "./components/Header/header";
 import Home from "./components/SectionHome/home";
-import Aside from "./components/Aside/aside";
-import GamesContainer from "./components/GamesContainer/gamesContainer";
+import Main from "./components/Main/main";
 
 function App() {
   return (
     <>
       <Header />
       <Home />      
-      <main>
-        <Aside />
-        <GamesContainer />
-      </main>
+      <Main />
     </>
   );
 }
