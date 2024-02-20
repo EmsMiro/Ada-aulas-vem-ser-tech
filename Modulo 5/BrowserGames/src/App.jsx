@@ -1,17 +1,20 @@
-import '../src/App.css'
-import Header from './components/Header/header'
-import Home from './components/SectionHome/home'
-
+import "../src/App.css";
+import Header from "./components/Header/header";
+import Home from "./components/SectionHome/home";
+import Aside from "./components/Aside/aside";
+import GamesContainer from "./components/GamesContainer/gamesContainer";
 
 function App() {
-  
   return (
-    <>      
+    <>
       <Header />
-      <Home/>
-      <h2 style={{ color: '#fff' }}>Testando..</h2>     
+      <Home />      
+      <main>
+        <Aside />
+        <GamesContainer />
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

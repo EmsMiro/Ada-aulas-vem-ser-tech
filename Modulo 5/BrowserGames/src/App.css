@@ -5,7 +5,7 @@ body {
 font-family: "Roboto Mono", monospace;
 margin: 0;
 padding: 0;
-background-color: #000103e7;
+background-color: #191C1F;
 }
 
 /* Reset CSS básico para limpar os estilos padrão dos navegadores */
@@ -45,4 +45,10 @@ img {
 section {
     margin: 0;
     padding: 0;
+}
+
+main {
+    display: flex;    
+    margin-top: 3rem;
+    max-width: 1140px;
 }
