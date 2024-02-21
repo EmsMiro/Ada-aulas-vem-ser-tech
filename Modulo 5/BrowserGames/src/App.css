@@ -42,8 +42,28 @@ img {
     height: auto; /* Mantém a proporção de aspecto da imagem */
 }
 
+input {
+    outline: none; /* Removendo a borda ao focar */
+}
+
 section {
     margin: 0;
     padding: 0;
+}
+
+textarea {
+    /* Resetando margens e preenchimento */
+    margin: 0;
+    padding: 0;
+  
+    /* Resetando borda */
+    border: none;
+    outline: none; /* Removendo a borda ao focar */
+  
+    /* Resetando fonte e cor de fundo */
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: #ffffff6b; 
 }
 

@@ -2,12 +2,12 @@
     color: #fff;    
     width: 70vw;  
     border-radius: 5px; 
-    margin-left: 2rem;           
+    margin-left: 2rem;
+    margin-top: 2rem;           
 }
 
 .games-container-title {
-    text-transform: uppercase;
-    margin-top: 1.8rem;
+    text-transform: uppercase;    
     margin-left: 2rem;
     font-weight: 400;    
 }

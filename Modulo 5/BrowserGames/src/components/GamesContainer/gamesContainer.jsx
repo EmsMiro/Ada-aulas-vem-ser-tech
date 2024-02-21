@@ -8,9 +8,11 @@ const GamesContainer = ()=> {
             <Card
             image="https://gamohol.com/wp-content/uploads/2024/02/palworld-cover-1.jpg"
             title="Palworld"
-            category="Em alta, aventura"
-            description="Jogo de sobrevivência com criaturas misteriosas chamadas Pals de mundo aberto e multiplayer!"
-            platform="Steam(Pc)" />
+            category="Em alta"
+            platform="PC"
+            description="Jogo de sobrevivência de mundo aberto e multiplayer!"            
+            coment="Seu review do jogo aqui"
+             />
         </div>
     );
 };

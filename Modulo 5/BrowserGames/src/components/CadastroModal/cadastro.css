@@ -55,8 +55,7 @@
 .modal-content input {
   width: calc(100% - 16px); 
   padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #000000;
+  margin-bottom: 15px;  
   border-radius: 3px;
   font-size: 16px;
 }
