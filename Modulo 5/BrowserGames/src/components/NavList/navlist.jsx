@@ -14,7 +14,8 @@ const NavList = () => {
             <ul className='navList'>
                 <li>Home</li>
                 <li onClick={() => setShowLoginModal(true)}>Login</li>
-                <li onClick={() => setShowCadastroModal(true)}>Cadastro</li>                
+                <li onClick={() => setShowCadastroModal(true)}>Cadastro</li>
+                <li>Perfil</li>                
             </ul>
             {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
             {showCadastroModal && <CadastroModal onClose={() => setShowCadastroModal(false)} />}

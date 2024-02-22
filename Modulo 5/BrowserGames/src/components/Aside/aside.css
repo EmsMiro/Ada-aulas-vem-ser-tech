@@ -5,7 +5,8 @@
     align-items: center;
     color: #fff;
     border-radius: 5px; 
-    margin-left: 2rem;  
+    margin-left: 2rem;
+    height: fit-content;    
 }
 
 .category-section-title {

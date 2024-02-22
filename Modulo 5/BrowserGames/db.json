@@ -84,7 +84,7 @@
       "thumbnail": "https://www.freetogame.com/g/475/thumbnail.jpg",
       "short_description": "If you’ve been looking for a game to scratch that open-world action RPG itch, one with perhaps a bit of Asian flair, then you’re going to want to check out miHoYo’s Genshin Impact.",
       "game_url": "https://www.freetogame.com/open/genshin-impact",
-      "genre": "Action RPG",
+      "genre": "Action",
       "platform": "PC (Windows)",
       "publisher": "miHoYo",
       "developer": "miHoYo",
@@ -5121,7 +5121,119 @@
       "developer": "CipSoft",
       "release_date": "1997-01-07",
       "freetogame_profile_url": "https://www.freetogame.com/tibia"
+    },
+    {
+      "id": 577,
+      "title": "Palworld",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/1623730/header.jpg?t=1707904340",
+      "short_description": "Fight, farm, build and work alongside mysterious creatures called Pals in this completely new multiplayer, open world survival and crafting game!",      
+      "genre": "Em alta"          
+    },
+    {
+      "id": 578,
+      "title": "EA SPORTS FC™",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/2195250/header.jpg?t=1708558281",
+      "short_description": "The World's Game: the most realistic soccer experience ever with HyperMotionV, Game Styles optimized by Opta and an improved Frostbite™ Engine.",      
+      "genre": "Em alta",
+      "platform": "PS PC Xbox"      
+    },
+    {
+      "id": 579,
+      "title": "Baldur's Gate 3",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg?t=1705604554",
+      "short_description": "A RPG set in the universe of Dungeons & Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power.",      
+      "genre": "Em alta",
+      "platform": "PS PC Xbox"      
+    },
+    {
+      "id": 580,
+      "title": "Red Dead Redemption 2",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg?t=1695140956",
+      "short_description": "The epic tale of outlaw Arthur Morgan and the infamous Van der Linde gang, on the run across America at the dawn of the modern age.",      
+      "genre": "Action",
+      "platform": "PS PC Xbox"      
+    },
+    {
+      "id": 581,
+      "title": "Gotham Knights",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/1496790/header.jpg?t=1708021189",
+      "short_description": "Batman is dead. Now, only the Batman family - Batgirl, Nightwing, Red Hood and Robin - will be able to protect Gotham.",      
+      "genre": "Action",
+      "platform": "PC (Windows)"      
+    },
+    {
+      "id": 582,
+      "title": "Marvel’s Spider-Man: Miles Morales",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/1817190/header.jpg?t=1700663089",
+      "short_description": "Miles Morales adapts to his new home while following in the footsteps of his mentor, Peter Parker, to become the new Spider-Man",      
+      "genre": "Action",
+      "platform": "PS PC Xbox"      
+    },
+    {
+      "id": 583,
+      "title": "ELDEN RING",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg?t=1708566081",
+      "short_description": "THE NEW ACTION FANTASY RPG. Rise, Maculate, and let yourself be guided by grace to wield the power of the Elden Ring and become an Elden Lord in the Midlands.",      
+      "genre": "Em alta",
+      "platform": "PS PC Xbox"      
+    },
+    {
+      "id": 584,
+      "title": "HELLDIVERS™ 2",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/553850/header.jpg?t=1707955699",
+      "short_description": "The Galaxy's Last Line of Attack. Enlist in the Helldivers and join the fight for freedom in a hostile galaxy in this fast, frantic and ferocious third-person shooter.",      
+      "genre": "Em alta",
+      "platform": "PC (Windows)"      
+    },
+    {
+      "id": 585,
+      "title": "Last Epoch",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/899770/header.jpg?t=1708534852",
+      "short_description": "Uncover the Past, Reforge the Future. Ascend into one of 15 mastery classes and explore dangerous dungeons, hunt epic loot, craft legendary weapons, and wield the power of over a hundred transformative skill trees.",      
+      "genre": "Em alta",
+      "platform": "PC (Windows)"      
+    },
+    {
+      "id": 586,
+      "title": "Grand Theft Auto V",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg?t=1706131787",
+      "short_description": "Grand Theft Auto V for PC offers players the option of exploring the gigantic, award-winning world of Los Santos and Blaine County",      
+      "genre": "Action",
+      "platform": "PS PC Xbox"      
+    },
+    {
+      "id": 587,
+      "title": "DOOM Eternal",
+      "thumbnail": "https://cdn.cloudflare.steamstatic.com/steam/apps/782330/header.jpg?t=1702308063",
+      "short_description": "The armies of Hell have invaded Earth. Become the Slayer in an epic single-player campaign and defeat the demons in various dimensions to prevent the destruction of humanity.",      
+      "genre": "Action",
+      "platform": "PC Xbox"      
+    },
+    {
+      "id": 588,
+      "title": "",
+      "thumbnail": "",
+      "short_description": "",      
+      "genre": "",
+      "platform": ""      
+    },
+    {
+      "id": 590,
+      "title": "",
+      "thumbnail": "",
+      "short_description": "",      
+      "genre": "",
+      "platform": ""      
+    },
+    {
+      "id": 591,
+      "title": "",
+      "thumbnail": "",
+      "short_description": "",      
+      "genre": "",
+      "platform": ""      
     }
+
   ],
   "users": [
     {
@@ -5144,6 +5256,13 @@
       "email": "vitar@email.com",
       "password": "1234",
       "id": 3
+    },
+    {
+      "name": "charles chaplin",
+      "idade": "32",
+      "email": "charles@email.com",
+      "password": "123456",
+      "id": 4
     }
   ],
   "reviews": [
