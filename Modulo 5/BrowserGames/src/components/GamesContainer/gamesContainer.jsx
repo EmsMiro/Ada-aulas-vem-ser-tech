@@ -3,11 +3,8 @@ import Card from '../CardGame/cardgame';
 
 const GamesContainer = ({ games })=> {
     return(
-        <div className='games-container'>
-            {/* <h2 className='games-container-title'>nome da categoria</h2> */}
-            
-            {games?.map((game) => ( 
-                               
+        <div className='games-container'>          
+            {games?.map((game) => (                               
                 <Card 
                 game={game}
                 key={game.id}

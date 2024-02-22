@@ -17,7 +17,6 @@ font-weight: 400;
 }
 
 .category-item li {
-    /* width: 100%;  */
     display: flex;
     align-items: center;
     justify-content: start; 

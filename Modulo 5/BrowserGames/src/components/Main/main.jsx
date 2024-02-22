@@ -1,13 +1,18 @@
 import './main.css'
-import { useState } from 'react'; 
+import { useState, useEffect } from 'react'; 
 import Aside from '../Aside/aside';
 import GamesContainer from '../GamesContainer/gamesContainer';
 
 const Main = ()=> {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState([]); 
+  const [selectedCategory, setSelectedCategory] = useState(""); // variável de estado para armazenar o nome da categoria q foi selecionada 
 
-  const handleItemClick = async (itemName) => {
-    console.log("Fui clicado:", itemName);
+  useEffect(() => {
+    // função para carregar os jogos da categoria "default" assim que o componente for montado
+    handleItemClick("Em alta");
+  }, []); // esse array de dependências vazio é pra garantir que essa função só será executada uma vez, quando o componente for montado
+
+  const handleItemClick = async (itemName) => {    
 
     try {
       // consulta ao endpoint do json-server
@@ -29,18 +34,17 @@ const Main = ()=> {
         platform: game.platform
       }));
 
-      setGames(selectedGames);
-
-     
-      console.log("Jogos da categoria:", selectedGames);
+      setGames(selectedGames); 
+      setSelectedCategory(itemName); // define o nome da categoria selecionad         
+      
     } catch (error) {
       console.error('Erro:', error.message);
     }
   };    
     return(
         <main>
-        <Aside handleItemClick={handleItemClick} />
-        <GamesContainer games={games} />
+        <Aside handleItemClick={handleItemClick} />        
+        <GamesContainer games={games} selectedCategory={selectedCategory} />
       </main>
     );
 };

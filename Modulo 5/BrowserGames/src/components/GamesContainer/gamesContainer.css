@@ -29,5 +29,8 @@
 .games-container-title {
     text-transform: uppercase;    
     margin-left: 2rem;
-    font-weight: 400;    
+    font-weight: 400;
+    height: fit-content;
+    display: inline;  
+    
 }
