@@ -2,11 +2,12 @@ import './main.css'
 import { useState, useEffect } from 'react'; 
 import Aside from '../Aside/aside';
 import GamesContainer from '../GamesContainer/gamesContainer';
+import SearchBar from '../SearchBar/searchBar';
 
 const Main = ()=> {
   const [games, setGames] = useState([]); 
   const [selectedCategory, setSelectedCategory] = useState(""); // variável de estado para armazenar o nome da categoria q foi selecionada 
-
+  
   useEffect(() => {
     // função para carregar os jogos da categoria "default" assim que o componente for montado
     handleItemClick("Em alta");
@@ -35,16 +36,20 @@ const Main = ()=> {
       }));
 
       setGames(selectedGames); 
-      setSelectedCategory(itemName); // define o nome da categoria selecionad         
+      setSelectedCategory(itemName); // definindo o nome da categoria selecionad 
+         
       
     } catch (error) {
       console.error('Erro:', error.message);
     }
   };    
     return(
-        <main>
-        <Aside handleItemClick={handleItemClick} />        
+        <main>        
+        <Aside handleItemClick={handleItemClick} />
+        <div className="content-main-container">
+        <SearchBar />                     
         <GamesContainer games={games} selectedCategory={selectedCategory} />
+        </div>        
       </main>
     );
 };

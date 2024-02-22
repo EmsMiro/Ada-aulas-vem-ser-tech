@@ -3,11 +3,11 @@ import Header from "./components/Header/header";
 import Home from "./components/SectionHome/home";
 import Main from "./components/Main/main";
 
-function App() {
+function App() {  
   return (
     <>
       <Header />
-      <Home />            
+      <Home />                 
       <Main />
     </>
   );

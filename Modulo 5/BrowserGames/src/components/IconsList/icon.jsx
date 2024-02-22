@@ -3,7 +3,7 @@ export default function Icon ({name, src, alt, width, height}) {
     {
         name: 'logo',
         src: 'https://img.icons8.com/ios/50/bdfe2e/apple-arcade.png',
-        alt: 'arcade-joystick',
+        alt: 'arcade joystick',
         width: 50,
         height: 50
     },
@@ -11,9 +11,17 @@ export default function Icon ({name, src, alt, width, height}) {
     {
         name: 'arcade',
         src: 'https://img.icons8.com/ios-filled/50/FFFFFF/arcade-cabinet.png',
-        alt: 'arcade-cabinet',
+        alt: 'arcade cabinet',
         width: 50,
         height: 50
+    },
+
+    {
+        name:'search',
+        src:'https://img.icons8.com/sf-regular/48/bdfe2e/search.png',
+        alt:'magnifying glass',
+        width: 30,
+        height: 30
     }
  ]
 

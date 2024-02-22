@@ -1,6 +1,11 @@
 main {
-    display: flex;
+    display: flex;    
     justify-content: space-between;
     margin: 0 auto;    
-    margin-top: 3rem;    
+    margin-top: 2.4rem;    
+} 
+
+.content-main-container {
+    display: flex;
+    flex-direction: column;
 }
