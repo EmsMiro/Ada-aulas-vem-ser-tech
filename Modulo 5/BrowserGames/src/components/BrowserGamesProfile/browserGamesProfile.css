@@ -1,10 +1,15 @@
  .browser-games-container {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 5rem;
+    display: flex;   
+    margin-left: 2rem;    
 }
 
 .browser-games-container-title {
     color: #fff;
+}
+
+.teste-container {
+    background-color: aqua;
+    margin-left: 2rem;
+    max-width: 70vw;
 }
 

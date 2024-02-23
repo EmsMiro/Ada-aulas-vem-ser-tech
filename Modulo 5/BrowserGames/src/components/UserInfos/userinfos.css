@@ -3,11 +3,12 @@
     display: flex;
     flex-direction: column;
     width: fit-content;
-    padding: 3rem;
+    padding: 3.5rem;
     margin-left: 2rem;
     text-align: left;
     line-height: 1.5rem;
     border-radius: 5px;
+    font-weight: 500;
 }
 .user-img {
     width: 90px;
