@@ -1,9 +1,11 @@
 import "./headerprofile.css";
 import { NavLink } from "react-router-dom";
+import { UserContext } from "../Contexts/UserProvider/userProvider.jsx";
+import { useContext } from "react";
 import Icon from "../IconsList/icon";
 
 const HeaderProfile = () => {
-  return (
+   return (
     <header>
       <Icon name="logo" />
       <nav>

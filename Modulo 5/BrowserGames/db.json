@@ -5216,29 +5216,8 @@
       "name": "João da Silva",
       "email": "joao@email.com",
       "password": "12345",
-      "idade": "18"
-    },
-    {
-      "name": "Michael Jackson",
-      "idade": "51",
-      "email": "michael@email.com",
-      "password": "12345",
-      "id": 2
-    },
-    {
-      "name": "Pablo vittar",
-      "idade": "24",
-      "email": "vitar@email.com",
-      "password": "1234",
-      "id": 3
-    },
-    {
-      "name": "charles chaplin",
-      "idade": "32",
-      "email": "charles@email.com",
-      "password": "123456",
-      "id": 4
-    }
+      "age": "18"      
+    }  
   ],
   "reviews": [
     {
