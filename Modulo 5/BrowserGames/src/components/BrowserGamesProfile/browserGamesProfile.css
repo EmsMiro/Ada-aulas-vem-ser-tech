@@ -1,0 +1,10 @@
+ .browser-games-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5rem;
+}
+
+.browser-games-container-title {
+    color: #fff;
+}
+

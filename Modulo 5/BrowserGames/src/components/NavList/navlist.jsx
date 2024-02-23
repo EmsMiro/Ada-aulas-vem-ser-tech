@@ -2,6 +2,7 @@ import { useState } from 'react';
 import LoginModal from '../LoginModal/login'
 import CadastroModal from '../CadastroModal/cadastro'
 import './navlist.css'
+import { NavLink } from 'react-router-dom';
 
 
 const NavList = () => {
@@ -12,10 +13,10 @@ const NavList = () => {
     return (
         <nav>
             <ul className='navList'>
-                <li>Home</li>
+                <li><NavLink to='/' className="NavLink">Home</NavLink></li>
                 <li onClick={() => setShowLoginModal(true)}>Login</li>
                 <li onClick={() => setShowCadastroModal(true)}>Cadastro</li>
-                <li>Perfil</li>                
+                <li><NavLink to='/profile' className="NavLink">Perfil</NavLink></li>                
             </ul>
             {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
             {showCadastroModal && <CadastroModal onClose={() => setShowCadastroModal(false)} />}

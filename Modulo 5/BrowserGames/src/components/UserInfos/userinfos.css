@@ -1,0 +1,17 @@
+.user-infos-aside {
+    background-color: #BDFE2E;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 3rem;
+    margin-left: 2rem;
+    text-align: left;
+    line-height: 1.5rem;
+    border-radius: 5px;
+}
+.user-img {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    margin-bottom: 1rem;      
+}

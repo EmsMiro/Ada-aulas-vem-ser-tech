@@ -1,0 +1,16 @@
+.dropdown-container {
+    position: relative;
+    width: 200px;
+    margin-left: 1rem;
+  }
+  
+  .dropdown {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+  }

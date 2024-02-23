@@ -5208,38 +5208,13 @@
       "short_description": "The armies of Hell have invaded Earth. Become the Slayer in an epic single-player campaign and defeat the demons in various dimensions to prevent the destruction of humanity.",      
       "genre": "Action",
       "platform": "PC Xbox"      
-    },
-    {
-      "id": 588,
-      "title": "",
-      "thumbnail": "",
-      "short_description": "",      
-      "genre": "",
-      "platform": ""      
-    },
-    {
-      "id": 590,
-      "title": "",
-      "thumbnail": "",
-      "short_description": "",      
-      "genre": "",
-      "platform": ""      
-    },
-    {
-      "id": 591,
-      "title": "",
-      "thumbnail": "",
-      "short_description": "",      
-      "genre": "",
-      "platform": ""      
     }
-
   ],
   "users": [
     {
       "id": 1,
       "name": "João da Silva",
-      "email": "teste@teste.com",
+      "email": "joao@email.com",
       "password": "12345",
       "idade": "18"
     },

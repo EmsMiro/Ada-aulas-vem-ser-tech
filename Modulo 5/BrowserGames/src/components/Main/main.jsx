@@ -1,4 +1,4 @@
-import './main.css'
+import './Main.css'
 import { useState, useEffect } from 'react'; 
 import Aside from '../Aside/aside';
 import GamesContainer from '../GamesContainer/gamesContainer';

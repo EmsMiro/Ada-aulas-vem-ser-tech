@@ -14,6 +14,9 @@ const LoginModal = ({ onClose }) => {
             <div className="modal-content login-modal" onClick={handleModalClick}>
                 <span className="close-button" onClick={handleClose}>X</span>
                 <h2>Login</h2>
+                <form>
+                    
+                </form>
                 <div>
                     <label>Email</label>
                     <input type="text" placeholder="jose@email.com" />
